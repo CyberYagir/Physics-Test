@@ -1,5 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Manager
 {
@@ -7,17 +11,21 @@ namespace Manager
     public class Selector
     {
         [SerializeField] private List<Transform> selectedObjects = new List<Transform>(100);
-    
-                
-                
+
+        private List<GraphicRaycaster> raycasters = new List<GraphicRaycaster>();
+
         private Camera cam;
     
         private GizmoMove gizmo;
         private LayerMask mask;
-        public void Init(Camera camera, GizmoMove giz)
+
+        private GizmoManager manager;
+        public void Init(Camera camera, GizmoMove giz, GizmoManager manager)
         {
             gizmo = giz;
             cam = camera;
+            this.manager = manager;
+            raycasters = Object.FindObjectsOfType<GraphicRaycaster>().ToList();
             mask = LayerMask.GetMask("Default");
         }
 
@@ -41,6 +49,7 @@ namespace Manager
             {
                 selectedObjects.Add(obj);
             }
+            manager.OnSelectObject.Invoke(selectedObjects);
         }
     
         public void Update()
@@ -52,6 +61,18 @@ namespace Manager
             }
             if (!gizmo.IsMoved && Input.GetKeyUp(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Mouse1))
             {
+                List<RaycastResult> raycasts = new List<RaycastResult>(100);
+                var pointer = new PointerEventData(EventSystem.current) {position = Input.mousePosition};
+                foreach (var raycaster in raycasters)
+                {
+                    raycaster.Raycast(pointer, raycasts);
+                    if (raycasts.Count != 0)
+                    {
+                        return;
+                    }
+                }
+
+
                 RaycastHit hit;
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
     
@@ -71,6 +92,7 @@ namespace Manager
                 else
                 {
                     selectedObjects.Clear();
+                    manager.OnSelectObject.Invoke(selectedObjects);
                     gizmo.SetGizmo(false, null);
                 }
             }
