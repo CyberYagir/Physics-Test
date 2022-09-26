@@ -65,6 +65,7 @@ namespace UI
         public void Init()
         {
             gizmo.OnSelectObject.AddListener(OnChangeSelection);
+            gizmo.OnUpdateSelected.AddListener(UpdateData);
             
         }
 
@@ -87,19 +88,30 @@ namespace UI
                 objec.transform.localScale = arg0;
             });
         }
+
+        private Transform lastSelect = null;
+        
         public void OnChangeSelection(List<Transform> selection)
         {
             canvas.enabled = selection.Count == 1;
 
             if (canvas.enabled)
             {
+                lastSelect = selection[0];
                 InputVectorReset(selection[0]);
-                pos.Convert(selection[0].position);
-                rot.Convert(selection[0].eulerAngles);
-                scale.Convert(selection[0].localScale);
+                UpdateData();
             }
         }
 
+        public void UpdateData()
+        {
+            if (lastSelect != null)
+            {
+                pos.Convert(lastSelect.position);
+                rot.Convert(lastSelect.eulerAngles);
+                scale.Convert(lastSelect.localScale);
+            }
+        }
 
     }
 }

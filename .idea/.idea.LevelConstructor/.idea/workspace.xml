@@ -10,6 +10,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Menu/ButtonAnimations.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CursorManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Menu/DesingnersDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="2FGQSZiFORarl9qur1HRCoFLNmS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -61,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664115946290</updated>
       <workItem from="1664115955716" duration="3243000" />
+      <workItem from="1664202754864" duration="6127000" />
     </task>
     <servers />
   </component>

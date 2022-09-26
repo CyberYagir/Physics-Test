@@ -198,10 +198,10 @@ MonoBehaviour:
     materialQuality: 0
   m_RenderPipelineSettings:
     supportShadowMask: 0
-    supportSSR: 0
+    supportSSR: 1
     supportSSRTransparent: 0
     supportSSAO: 1
-    supportSSGI: 0
+    supportSSGI: 1
     supportSubsurfaceScattering: 1
     sssSampleBudget:
       m_Values: 140000002800000050000000
@@ -226,7 +226,7 @@ MonoBehaviour:
     customBufferFormat: 12
     supportedLitShaderMode: 2
     planarReflectionResolution:
-      m_Values: 000100000004000000040000
+      m_Values: 000100000002000000040000
       m_SchemaId:
         m_Id: With3Levels
     supportDecals: 1
@@ -258,9 +258,9 @@ MonoBehaviour:
       cookieTexArraySize: 16
       planarReflectionAtlasSize: 1024
       reflectionProbeCacheSize: 32
-      reflectionCubemapSize: 256
+      reflectionCubemapSize: 512
       reflectionCacheCompressed: 1
-      reflectionProbeFormat: 74
+      reflectionProbeFormat: 48
       skyReflectionSize: 512
       skyLightingOverrideLayerMask:
         serializedVersion: 2

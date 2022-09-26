@@ -14,10 +14,11 @@ namespace Manager
         [SerializeField] private Selector selector;
 
         public UnityEvent<List<Transform>> OnSelectObject = new UnityEvent<List<Transform>>();
+        public UnityEvent OnUpdateSelected = new UnityEvent();
         public override void Init()
         {
             base.Init();
-            gizmoMove.Init(camera, selector);
+            gizmoMove.Init(camera, selector, this);
             selector.Init(camera, gizmoMove, this);
         }
 

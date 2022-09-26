@@ -45,12 +45,14 @@ namespace Manager
         private LayerMask mask;
         public bool IsMoved => selectedOrt != null;
 
+        private GizmoManager manager;
 
-        public void Init(Camera camera, Selector selector)
+        public void Init(Camera camera, Selector selector, GizmoManager gizmoManager)
         {
             this.selector = selector;
             cam = camera;
             mask = LayerMask.GetMask("Gizmo");
+            manager = gizmoManager;
                 
             x.SetCollider(false);
             y.SetCollider(false);
@@ -128,6 +130,8 @@ namespace Manager
                 var deltaPos = startPoint - hit.point;
                 var moveVector = new Vector3(deltaPos.x * selectedOrt.Vector.x, deltaPos.y * selectedOrt.Vector.y, deltaPos.z * selectedOrt.Vector.z);
                 selector.TranslateObjects(-moveVector);
+
+                manager.OnUpdateSelected.Invoke();
             }
 
             if (Input.GetKeyUp(KeyCode.Mouse0))

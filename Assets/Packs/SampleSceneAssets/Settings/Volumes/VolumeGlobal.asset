@@ -80,7 +80,7 @@ MonoBehaviour:
     m_Value: 2
   threshold:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.27
     min: 0
   intensity:
     m_OverrideState: 1
@@ -263,7 +263,6 @@ MonoBehaviour:
   - {fileID: -2223948172287066284}
   - {fileID: -3969488579639410846}
   - {fileID: 747098994415714109}
-  - {fileID: 4566301752631259820}
 --- !u!114 &747098994415714109
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -380,7 +379,7 @@ MonoBehaviour:
     max: 1
   m_SampleCount:
     m_OverrideState: 1
-    m_Value: 12
+    m_Value: 16
     min: 4
     max: 64
 --- !u!114 &2759069934644561995
@@ -491,7 +490,7 @@ MonoBehaviour:
     max: 1024
   m_VolumetricFogBudget:
     m_OverrideState: 1
-    m_Value: 0.333
+    m_Value: 0.5
     min: 0
     max: 1
   m_ResolutionDepthRatio:
@@ -505,25 +504,6 @@ MonoBehaviour:
   filter:
     m_OverrideState: 0
     m_Value: 0
---- !u!114 &4566301752631259820
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e17fad69ea181b4483974138b566975, type: 3}
-  m_Name: ScreenSpaceRefraction
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  screenFadeDistance:
-    m_OverrideState: 1
-    m_Value: 0.001
-    min: 0.001
-    max: 1
 --- !u!114 &5002876554434076654
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -540,13 +520,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 3
   rayTracing:
     m_OverrideState: 0
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.4
+    m_Value: 1.61
     min: 0
     max: 4
   directLightingStrength:
@@ -592,12 +572,12 @@ MonoBehaviour:
     m_Value: 0
   m_MaximumRadiusInPixels:
     m_OverrideState: 1
-    m_Value: 40
+    m_Value: 32
     min: 16
     max: 256
   m_BilateralUpsample:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   m_DirectionCount:
     m_OverrideState: 1
     m_Value: 2
@@ -605,11 +585,11 @@ MonoBehaviour:
     max: 6
   m_RayLength:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 3
     min: 0
   m_SampleCount:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 2
     min: 1
     max: 64
   m_Denoise:
@@ -617,7 +597,7 @@ MonoBehaviour:
     m_Value: 1
   m_DenoiserRadius:
     m_OverrideState: 1
-    m_Value: 0.65
+    m_Value: 0.5
     min: 0.001
     max: 1
 --- !u!114 &6640133647794636954
