@@ -35,7 +35,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - HideRenderer
   - Gizmo
   m_SortingLayers:
   - name: Default

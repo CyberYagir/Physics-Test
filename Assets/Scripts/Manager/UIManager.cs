@@ -8,6 +8,7 @@ namespace Manager
         [SerializeField] private CommandsContainer commandsContainer;
         [SerializeField] private CommandsList commandList;
         [SerializeField] private Inspector inspector;
+        [SerializeField] private ItemsDrawer items;
 
         public override void Init()
         {
@@ -15,6 +16,7 @@ namespace Manager
 
             commandList.Init(commandsContainer);
             inspector.Init();
+            items.Draw();
         }
 
         public void SwitchState(GameObject obj)

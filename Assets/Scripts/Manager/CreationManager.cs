@@ -23,8 +23,11 @@ namespace Manager
             foreach (var obj in objectsContainer.Objects)
             {
                 string command = "Spawn " + obj.Data.Name;
-                Action action = delegate { SpawnObject(obj.gameObject); };
-                commands.Add(command, action);
+                if (!commands.ContainsKey(command))
+                {
+                    Action action = delegate { SpawnObject(obj.gameObject); };
+                    commands.Add(command, action);
+                }
             }
 
             return commands;
