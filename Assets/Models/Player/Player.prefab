@@ -846,7 +846,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5572804347386837477}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2d88dfa00642b9745abd435eb3b1f396, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.25
@@ -884,6 +884,7 @@ MonoBehaviour:
   look:
     camera: {fileID: 5572804346780087052}
     lookSpeed: 180
+    cameraJoint: 0.1
   hands:
     hands: {fileID: 5572804347140654519}
     look: {fileID: 5572804346780087053}

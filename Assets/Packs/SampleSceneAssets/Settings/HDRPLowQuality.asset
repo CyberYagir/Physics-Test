@@ -360,9 +360,9 @@ MonoBehaviour:
         m_Id: With3Levels
     lodBias:
       m_Values:
-      - 1
-      - 1
-      - 1
+      - 2
+      - 2
+      - 3
       m_SchemaId:
         m_Id: With3Levels
     lightingQualitySettings:

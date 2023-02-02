@@ -17,17 +17,32 @@ namespace Base
         {
             [SerializeField] private Camera camera;
             [SerializeField] private float lookSpeed;
-
+            [SerializeField] private float cameraJoint = 0.2f;
+            private Vector3 maxY, minY;
+            
             private float angle = 0;
+            private float cameraWorldY;
+            private Vector3 startCameraLocalPos;
+            
             private Transform player;
             private UnityEvent<float> onChangeLook = new UnityEvent<float>();
 
+            private bool isOnGround;
+
+            private bool cameraStabilization = true;
+            
             public UnityEvent<float> OnChangeLook => onChangeLook;
 
 
             public void Init(Transform player)
             {
                 this.player = player;
+
+                startCameraLocalPos = camera.transform.localPosition;
+                maxY = startCameraLocalPos + Vector3.up * cameraJoint;
+                minY = startCameraLocalPos - Vector3.up * cameraJoint;
+                
+                cameraWorldY = camera.transform.position.y;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }
@@ -41,11 +56,33 @@ namespace Base
                 angle = Mathf.Clamp(angle, -90, 90);
 
                 camera.transform.localEulerAngles = new Vector3(-angle, 0, 0);
-
+                
                 if (lastAngle != angle)
                 {
                     OnChangeLook.Invoke(angle);
                 }
+            }
+
+            public void PhysUpdate()
+            {
+                if (!cameraStabilization) return;
+                
+                var camPos = camera.transform.position;
+                if (isOnGround)
+                {
+                    cameraWorldY = Mathf.Clamp(cameraWorldY, player.TransformPoint(minY).y, player.TransformPoint(maxY).y);
+                }
+                else
+                {
+                    cameraWorldY = player.TransformPoint(startCameraLocalPos).y;
+                }
+                cameraWorldY = Mathf.Lerp(cameraWorldY, player.TransformPoint(startCameraLocalPos).y, Time.fixedDeltaTime * 5);
+                camera.transform.position = new Vector3(camPos.x, cameraWorldY, camPos.z);
+            }
+
+            public void Fall(bool state)
+            {
+                isOnGround = state;
             }
         }
 
@@ -88,6 +125,9 @@ namespace Base
                 this.player = player;
                 rigidbody.useGravity = false;
 
+                rigidbody.solverIterations = 5;
+                rigidbody.solverVelocityIterations = 10;
+                
                 jumpMask = LayerMask.GetMask("Default");
 
                 isOnGround = JumpSphere().Item1;
@@ -116,7 +156,8 @@ namespace Base
                         }
                         else
                         {
-                            player.transform.position = hit.point + (hit.distance * Vector3.up);
+                            player.transform.position = Vector3.Lerp(player.transform.position, hit.point + (hit.distance * Vector3.up), Time.fixedDeltaTime);
+                           //rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
                         }
                     }
                     else
@@ -311,6 +352,7 @@ namespace Base
 
             animate.SetMove(move);
             move.OnJumpChange.AddListener(animate.Fall);
+            move.OnJumpChange.AddListener(look.Fall);
             look.OnChangeLook.AddListener(animate.UpdateLook);
         }
 
@@ -324,6 +366,7 @@ namespace Base
         private void FixedUpdate()
         {
             move.Update();
+            look.PhysUpdate();
         }
 
         private void OnDrawGizmos()
