@@ -4,28 +4,14 @@
     <list default="true" id="f79fce36-801c-4d24-8acb-7d9928385816" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/Bamboo_A.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/Bamboo_A.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/Bamboo_Leaf_A.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/Bamboo_Leaf_A.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/Bush_01_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/Bush_01_Mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/Fern_01_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/Fern_01_Mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/Plant_C.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/Plant_C.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Settings/HDRPHighQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Settings/HDRPHighQuality.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Settings/HDRPLowQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Settings/HDRPLowQuality.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Settings/HDRPMediumQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Settings/HDRPMediumQuality.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Meshes/Props/Nature/Prefab/Bamboo_B.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Meshes/Props/Nature/Prefab/Bamboo_B.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Meshes/Props/Nature/Prefab/NatureSetPiece_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Meshes/Props/Nature/Prefab/NatureSetPiece_02.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Grid Local.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Grid Local.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Grid World.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Grid World.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Base/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Base/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Sand 118c7f28bcf2878ea.terrainlayer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Sand 118c7f28bcf2878ea.terrainlayer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Sand 218c7f28bcf2878ea.terrainlayer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Sand 218c7f28bcf2878ea.terrainlayer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Sand 33d3aba195e4d26ee.terrainlayer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Sand 33d3aba195e4d26ee.terrainlayer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +87,7 @@
       <workItem from="1675242338493" duration="3000" />
       <workItem from="1675242638724" duration="606000" />
       <workItem from="1675279219106" duration="6840000" />
-      <workItem from="1675332202639" duration="13942000" />
+      <workItem from="1675332202639" duration="15506000" />
     </task>
     <servers />
   </component>

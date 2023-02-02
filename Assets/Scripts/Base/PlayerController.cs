@@ -271,17 +271,23 @@ namespace Base
         {
             [SerializeField] private Animator animator;
             [SerializeField] private Animator hands;
-            [SerializeField] private float maxVelocity;
             [SerializeField] private MultiAimConstraint spineAim;
-            
+            [SerializeField] private float maxVelocity;
+            [SerializeField] private float blendSpeed;
             private static readonly int Horizontal = Animator.StringToHash("Horizontal");
             private static readonly int Vertical = Animator.StringToHash("Vertical");
+            private static readonly int IsFall = Animator.StringToHash("IsFall");
 
             private Rigidbody rb;
             private Move move;
+
+            private float horizontalBlend, verticalBlend;
+            
             public void Init(Transform player)
             {
                 rb = player.GetComponent<Rigidbody>();
+                horizontalBlend = 0;
+                verticalBlend = 0;
             }
 
             public void Update()
@@ -290,13 +296,17 @@ namespace Base
 
                 var hor = -Mathf.Clamp(local.x / maxVelocity, -1f, 1f);
                 var vert = Mathf.Clamp(local.z/maxVelocity, -1f, 1f);
+
+                verticalBlend = Mathf.Lerp(verticalBlend, vert, blendSpeed * Time.deltaTime);
+                horizontalBlend = Mathf.Lerp(horizontalBlend, hor, blendSpeed * Time.deltaTime);
                 
-                animator.SetFloat(Horizontal, hor);
-                animator.SetFloat(Vertical, vert);
+                
+                animator.SetFloat(Horizontal, horizontalBlend);
+                animator.SetFloat(Vertical, verticalBlend);
                 
                 
-                hands.SetFloat(Horizontal, hor);
-                hands.SetFloat(Vertical, vert);
+                hands.SetFloat(Horizontal, horizontalBlend);
+                hands.SetFloat(Vertical, verticalBlend);
             }
 
             public void Fall(bool state)
@@ -315,7 +325,6 @@ namespace Base
                 this.move = move;
             }
         }
-        
         
         [System.Serializable]
         public class Hands:ILocalComponent
@@ -341,7 +350,6 @@ namespace Base
         [SerializeField] private Hands hands;
         [SerializeField] private Move move;
         [SerializeField] private Animate animate;
-        private static readonly int IsFall = Animator.StringToHash("IsFall");
 
         private void Awake()
         {

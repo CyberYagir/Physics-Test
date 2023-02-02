@@ -904,8 +904,9 @@ MonoBehaviour:
   animate:
     animator: {fileID: 2034502980695040537}
     hands: {fileID: 5572804348674653570}
-    maxVelocity: 5
     spineAim: {fileID: 5572804347325636282}
+    maxVelocity: 5
+    blendSpeed: 10
 --- !u!1 &5572804347549607833
 GameObject:
   m_ObjectHideFlags: 0
