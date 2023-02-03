@@ -48,7 +48,7 @@ namespace UI.Menu
             btn.interactable = false;
             
             fader.enabled = true;
-            fader.DOFade(1, 0.5f).onComplete += () => SceneManager.LoadScene("MapBuilder");
+            fader.DOFade(1, 0.5f).onComplete += () => SceneManager.LoadScene("Builder");
         }
     }
 }

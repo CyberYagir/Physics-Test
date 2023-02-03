@@ -2,16 +2,91 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f79fce36-801c-4d24-8acb-7d9928385816" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/Panel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/Panel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Meshes/Props/Nature/Prefab/Bamboo_B.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Meshes/Props/Nature/Prefab/Bamboo_B.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Meshes/Props/Nature/Prefab/NatureSetPiece_02.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Meshes/Props/Nature/Prefab/NatureSetPiece_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Menu.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Menu/Jeep.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Menu/Jeep.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Menu/Menu.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Menu/Menu.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Menu/Player.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Menu/Player.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Jeep_Willys.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Jeep_Willys.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Fall A Loop.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Fall A Loop.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Idle.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Idle.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Jog Strafe Left.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Jog Strafe Left.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Jog Strafe Right.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Jog Strafe Right.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/PlayerAnimator.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/PlayerAnimator.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Running Backward.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Running Backward.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Slow Run.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Animations/Slow Run.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Hands.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Hands.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Materials/Skin.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Materials/Skin.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Player.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Player.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Player.physicMaterial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Player.physicMaterial.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Player.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Podium.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Podium.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo/Demo.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo/Demo.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo/Materials/Black.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo/Materials/Black.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo/Materials/Graund.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo/Materials/Graund.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo/Materials/Wear.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo/Materials/Wear.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo/Materials/White.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Demo/Materials/White.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Editor/HierarchyIcons.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Editor/HierarchyIcons.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/IconsList.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/IconsList.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/ReadMe.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Scripts/Folder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Scripts/Folder.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Scripts/IconsList.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/HierarchyIcons/Scripts/IconsList.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Settings/Volumes/VolumeGlobal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Settings/Volumes/VolumeGlobal.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Base/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Base/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Grid Local.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Grid Local.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Grid World.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Grid World.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/DesingnersDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/DesingnersDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Grid Shader.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Grid Shader.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/PrototypeShader.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/PrototypeShader.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,16 +96,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10cd47be429140a4ac7e6f63cc71856d6000/13/36fe2a33/AssetBundle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Editor/CreateUIFoldersList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packs/Yagir.inc/ModsLoader/Scripts/ModsManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/ItemsGetter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Manager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Menu/DesingnersDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CursorManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UITabsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Menu/ButtonAnimations.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Playground/MovingPlatform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIOpenSubFolder.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="dy42edzx" />
   </component>
   <component name="ProjectId" id="2FGQSZiFORarl9qur1HRCoFLNmS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,6 +182,12 @@
       <workItem from="1675242638724" duration="606000" />
       <workItem from="1675279219106" duration="6840000" />
       <workItem from="1675332202639" duration="15506000" />
+      <workItem from="1675376887375" duration="3021000" />
+      <workItem from="1675415129843" duration="5174000" />
+      <workItem from="1675435653447" duration="3175000" />
+      <workItem from="1675443994717" duration="981000" />
+      <workItem from="1675446707593" duration="117000" />
+      <workItem from="1675456241263" duration="9947000" />
     </task>
     <servers />
   </component>
@@ -104,6 +204,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
