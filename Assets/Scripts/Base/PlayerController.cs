@@ -32,7 +32,7 @@ namespace Base
             private bool cameraStabilization = true;
             
             public UnityEvent<float> OnChangeLook => onChangeLook;
-
+            public Camera Camera => camera;
 
             public void Init(Transform player)
             {
@@ -43,6 +43,7 @@ namespace Base
                 minY = startCameraLocalPos - Vector3.up * cameraJoint;
                 
                 cameraWorldY = camera.transform.position.y;
+                
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }

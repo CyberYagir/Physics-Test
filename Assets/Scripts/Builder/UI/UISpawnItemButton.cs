@@ -15,17 +15,26 @@ namespace Builder.UI
         private bool over = false;
         private Item item;
 
+
+        private UICreateWindow window;
+
         public void Init(Item item, UICreateWindow window)
         {
             this.item = item;
             text.text = item.Name;
 
+            this.window = window;
+            
             if (item.Icon != null)
                 image.texture = item.Icon;
             else
                 image.transform.localScale /= 2;
         }
 
+        public void Click()
+        {
+            window.CreateItem(item);
+        }
 
         public override void Enter()
         {

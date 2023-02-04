@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.UI;
 
 namespace Builder.UI
 {
@@ -74,7 +77,61 @@ namespace Builder.UI
             }
         }
 
+        [System.Serializable]
+        public class SpawnMode
+        {
+            public enum SpawnType
+            {
+                Single,
+                Multispawn
+            }
+
+            [System.Serializable]
+            public class TextSelection
+            {
+                [SerializeField] private TMP_Text text;
+                [SerializeField] private Image fill;
+                [SerializeField] private SpawnType type;
+
+                public void Animate(SpawnType current)
+                {
+                    float height = 53;
+                    float speed = Time.deltaTime * 10;
+                    if (current == type)
+                    {
+                        text.color = Color.Lerp(text.color, Color.gray, speed);
+                    }
+                    else
+                    {
+                        text.color = Color.Lerp(text.color, Color.white, speed);
+                    }
+
+                    fill.rectTransform.sizeDelta = Vector2.Lerp(fill.rectTransform.sizeDelta, new Vector2(fill.rectTransform.sizeDelta.x, current == type ? height : 0), speed);
+                }
+            }
+
+
+            [SerializeField] private SpawnType type;
+            [SerializeField] private List<TextSelection> hotkeys;
+
+
+            public void Update()
+            {
+                type = SpawnType.Single;
+                if (Input.GetKey(KeyCode.LeftControl))
+                {
+                    type = SpawnType.Multispawn;
+                }
+
+                foreach (var key in hotkeys)
+                {
+                    key.Animate(type);
+                }
+            }
+        }
+
         [SerializeField] private PageDrawer pageDrawer;
+        [SerializeField] private SpawnMode spawnMode;
         
         private Folder holder = new Folder("Holder", null);
         public Folder Holder => holder;
@@ -84,7 +141,7 @@ namespace Builder.UI
         {
             base.Init(tabsManager);
             pageDrawer.Init(this);
-            StartCoroutine(CreateItems());
+            tabsManager.StartCoroutine(CreateItems());
         }
 
         IEnumerator CreateItems()
@@ -184,7 +241,12 @@ namespace Builder.UI
         {
             pageDrawer.DrawPage(fld);
         }
-        
+
+        private void Update()
+        {
+            spawnMode.Update();
+        }
+
         public string[] GetFolders(string path)
         {
             if (path.Last() == '/')
@@ -193,6 +255,11 @@ namespace Builder.UI
             }
 
             return path.Split('/');
+        }
+
+        public void CreateItem(Item item)
+        {
+            tabsManager.Manager.Controller.SpawnItem(item);
         }
     }
 }

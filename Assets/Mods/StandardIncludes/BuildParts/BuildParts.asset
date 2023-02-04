@@ -17,7 +17,7 @@ MonoBehaviour:
   modVersionData:
     major: 2023
     minor: 2
-    patch: 3
+    patch: 5
   initializers:
     scripts: []
     namedScripts: []

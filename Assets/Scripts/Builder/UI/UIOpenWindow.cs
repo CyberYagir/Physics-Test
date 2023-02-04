@@ -11,16 +11,30 @@ namespace Builder.UI
 
         private bool opened;
 
+        public bool Opened => opened;
+
         private void Awake()
         {
-            rectTransform.sizeDelta = Vector2.zero;
+            rectTransform.sizeDelta = Vector2.zero;                    
+            gameObject.SetActive(false);
+
         }
 
         public void OpenClose()
         {
-            opened = !opened;
+            opened = !Opened;
+            if (Opened)
+            {
+                gameObject.SetActive(true);
+            }
             rectTransform.DOKill();
-            rectTransform.DOSizeDelta(opened ? finalSize : Vector2.zero, 0.2f);
+            rectTransform.DOSizeDelta(Opened ? finalSize : Vector2.zero, 0.2f).onComplete += () =>
+            {
+                if (!Opened)
+                {
+                    gameObject.SetActive(false);
+                }
+            };
         }
     }
 }
