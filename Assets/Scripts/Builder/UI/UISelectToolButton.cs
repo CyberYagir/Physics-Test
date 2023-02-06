@@ -9,8 +9,10 @@ namespace Builder.UI
     public class UISelectToolButton : UIController
     {
         [SerializeField] private GameObject item;
+        [SerializeField] private UIButton spaceButtons;
         void Start()
         {
+            spaceButtons.Init(tabsManager);
             foreach (var tool in tabsManager.Manager.ObjectsController.Tools)
             {
                 var it = Instantiate(item.gameObject, item.transform.parent);

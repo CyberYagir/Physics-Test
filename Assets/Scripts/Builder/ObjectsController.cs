@@ -8,17 +8,31 @@ namespace Builder
 {
     public class ObjectsController : MonoBehaviour
     {
+        public enum Space
+        {
+            Local, Global
+        }
+        
+        
         private static ObjectsController Instance;
 
         [SerializeField] private List<GameObject> selected;
-        
         [SerializeField] private List<Tool> tools;
+        [SerializeField] private Space space;
+        
         private Tool currentTool;
         private Manager manager;
+        private bool gizmoHandled = false;
+        
+        public UnityEvent ChangeSelect = new UnityEvent();
+        
         public List<Tool> Tools => tools;
         public List<GameObject> Selection => selected;
 
-        public UnityEvent ChangeSelect = new UnityEvent();
+        public Manager Manager => manager;
+
+
+
         
         public void Init(Manager manager)
         {
@@ -31,41 +45,73 @@ namespace Builder
         }
         private void Update()
         {
-            if (!manager.TabsManager.HaveOpenedWindowsOrUI())
+            if (!Manager.TabsManager.HaveOpenedWindowsOrUI())
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    Ray ray = manager.Controller.Camera.ScreenPointToRay(Input.mousePosition);
-                    if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Default", "Player")))
+                    var isGizmoMove = CalculateGizmoProcess() || gizmoHandled;
+
+                    if (!isGizmoMove)
                     {
-                        if (hit.collider != null)
-                        {
-                            SelectObject(hit.transform.root.gameObject, Input.GetKey(KeyCode.LeftShift));
-                        }
-                        else
-                        {
-                            if (Input.GetKey(KeyCode.LeftShift))
-                            {
-                                ClearSelect();
-                            }
-                        }
+                        CalculateSelectionProcess();
                     }
-                    else
+                }else
+                if (Input.GetKeyUp(KeyCode.Mouse0))
+                {
+                    if (gizmoHandled)
                     {
-                        if (!Input.GetKey(KeyCode.LeftShift))
-                        {
-                            ClearSelect();
-                        }
+                        gizmoHandled = false;
                     }
                 }
 
                 if (currentTool != null)
                 {
-                    currentTool.Update(Selection);
+                    currentTool.Update(Selection, true);
                 }
             }
         }
+
+        public bool CalculateGizmoProcess()
+        {
+            Ray ray = Manager.Controller.Camera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Gizmo")))
+            {
+                gizmoHandled = true;
+                if (currentTool != null)
+                {
+                    currentTool.ActionStart(Selection);
+                }
+                return true;
+            }
+            return false;
+        }
         
+        
+        private void CalculateSelectionProcess()
+        {
+            Ray ray = Manager.Controller.Camera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Default", "Player")))
+            {
+                if (hit.collider != null)
+                {
+                    SelectObject(hit.transform.root.gameObject, Input.GetKey(KeyCode.LeftShift));
+                }
+                else
+                {
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        ClearSelect();
+                    }
+                }
+            }
+            else
+            {
+                if (!Input.GetKey(KeyCode.LeftShift))
+                {
+                    ClearSelect();
+                }
+            }
+        }
         
         
         
@@ -112,8 +158,23 @@ namespace Builder
             if (Instance.currentTool != null)
             {
                 Instance.currentTool.Select();
-                Instance.currentTool.Update(Instance.selected);
+                Instance.currentTool.Update(Instance.selected, false);
             }
+        }
+    
+        public static Manager GetManager()
+        {
+            return Instance.manager;
+        }
+
+        public static Space GetSpace()
+        {
+            return Instance.space;
+        }
+
+        public static void ChangeSpace(Space space)
+        {
+            Instance.space = space;
         }
     }
 }
