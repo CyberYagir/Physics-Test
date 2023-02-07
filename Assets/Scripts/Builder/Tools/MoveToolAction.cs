@@ -9,44 +9,90 @@ namespace Builder.Tools
 {
     public class MoveToolAction : ToolAction, IToolAction
     {
+        public class SelectionData
+        {
+            private Vector3 pos;
+            private Ray ray;
+            private Vector3 interactionOffset;
 
-        private List<Vector3> selectionStartPositions = new List<Vector3>(100);
+            public SelectionData(Vector3 pos, Ray ray, Vector3 interactionOffset)
+            {
+                this.pos = pos;
+                this.ray = ray;
+                this.interactionOffset = interactionOffset;
+            }
 
+            public Vector3 InteractionOffset => interactionOffset;
+
+            public Ray Ray => ray;
+
+            public Vector3 Pos => pos;
+        }
+        private List<SelectionData> selectionDatas = new List<SelectionData>(100);
+
+        
+        
         public void StartAction(List<GameObject> selection, Tool.AxisOption handle)
         {
             handle.GizmoHandle.SetMainCollider(false);
-
-            selectionStartPositions.Clear();
+            selectionDatas.Clear();
+            ///////////////////
             
-            Init(handle);
-            
-            
-            foreach (var item in selection)
+            switch (handle.Axis)
             {
-                selectionStartPositions.Add(item.transform.position);
+                case Axis.X:
+                    axis = Vector3.right;
+                    break;
+                case Axis.Y:
+                    axis = Vector3.up;
+                    break;
+                case Axis.Z:
+                    axis = Vector3.forward;
+                    break;
             }
-            
+
+            Ray cameraRay = ObjectsController.GetManager().Controller.Camera.ScreenPointToRay(Input.mousePosition);
+            for (int i = 0; i < selection.Count; i++)
+            {
+
+                var pos = selection[i].transform.position;
+
+                Vector3 raxis = ObjectsController.GetSpace() == ObjectsController.Space.Local && selection.Count == 1
+                    ? selection[i].transform.rotation * axis
+                    : axis;
+                var raxisRay = new Ray(pos, raxis);
+                
+                float closestT = HandleMathUtils.ClosestPointOnRay(raxisRay, cameraRay);
+                Vector3 hitPoint = raxisRay.GetPoint(closestT);
+
+                var interactionOffset = pos - hitPoint;
+                
+                selectionDatas.Add(new SelectionData(pos, raxisRay, interactionOffset));
+            }
+
+            //////////////////////
             handle.GizmoHandle.SetMainCollider(true);
         }
 
         public void Action(List<GameObject> selection, Tool.AxisOption handle)
         {
-            this.handle = handle;
             handle.GizmoHandle.SetMainCollider(false);
-            var oldPos = handle.GizmoHandle.transform.position;
-            handle.GizmoHandle.transform.position = startGizmoPos;
             
-            
-            
-            var cast = Raycast();
-            if (cast.collider != null)
-            {
-                var currentMousePos = cast.point;
-                
-                CalculateAction(selection, CalculateAxisVector(currentMousePos, handle.GizmoHandle.transform));
-            }
+            Ray cameraRay = ObjectsController.GetManager().Controller.Camera.ScreenPointToRay(Input.mousePosition);
 
-            handle.GizmoHandle.transform.position = oldPos;
+            float   closestT = HandleMathUtils.ClosestPointOnRay(selectionDatas[0].Ray, cameraRay);
+            Vector3 hitPoint = selectionDatas[0].Ray.GetPoint(closestT);
+
+            Vector3 offset = hitPoint + selectionDatas[0].InteractionOffset - selectionDatas[0].Pos;
+            
+            
+            
+            for (int i = 0; i < selection.Count; i++)
+            {
+                Vector3 position = selectionDatas[i].Pos + offset;
+                selection[i].transform.position = position;
+                
+            }
             handle.GizmoHandle.SetMainCollider(true);
         }
 
@@ -63,20 +109,6 @@ namespace Builder.Tools
             }
 
             gizmo.transform.rotation = Quaternion.Lerp(gizmo.transform.rotation, rot, Time.deltaTime * 20);
-        }
-
-
-        public void CalculateAction(List<GameObject> selection, Vector3 nextPos)
-        {
-            var isGrid = Input.GetKey(KeyCode.LeftControl);
-            for (int i = 0; i < selection.Count; i++)
-            {
-                selection[i].transform.position = selectionStartPositions[i] + nextPos;
-                if (isGrid)
-                {
-                    selection[i].transform.position = Vector3Int.RoundToInt(selection[i].transform.position);
-                }
-            }
         }
     }
 }

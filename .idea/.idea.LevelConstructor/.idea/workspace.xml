@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f79fce36-801c-4d24-8acb-7d9928385816" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/IToolAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/IToolAction.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ToolAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ToolAction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/HandleMathUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/HandleMathUtils.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Cone$BuildParts.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Cone$BuildParts.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Tor$BuildParts.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Tor$BuildParts.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Cone.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Cone.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Cone.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Cone.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Tor.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Tor.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Tor.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Tor.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/GlassDirt_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/SampleSceneAssets/Materials/General/GlassDirt_Mat.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/GizmoHandle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/GizmoHandle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/ObjectsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/ObjectsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISelectToolButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISelectToolButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/MoveToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/MoveToolAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ToolAction.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +120,8 @@
       <workItem from="1675533035190" duration="16000" />
       <workItem from="1675533088611" duration="20938000" />
       <workItem from="1675631605541" duration="6910000" />
-      <workItem from="1675678627013" duration="21643000" />
+      <workItem from="1675678627013" duration="26695000" />
+      <workItem from="1675763649142" duration="1888000" />
     </task>
     <servers />
   </component>
