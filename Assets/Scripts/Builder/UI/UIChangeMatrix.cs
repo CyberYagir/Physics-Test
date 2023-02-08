@@ -12,12 +12,12 @@ namespace Builder.UI
         public class Icon
         {
             [SerializeField] private Sprite icon;
-            [SerializeField] private ObjectsController.Space space;
+            [SerializeField] private SelectionService.Space space;
             [SerializeField] private string name;
 
             public string Name => name;
 
-            public ObjectsController.Space Space => space;
+            public SelectionService.Space Space => space;
 
             public Sprite TypeIcon => icon;
         }
@@ -27,27 +27,35 @@ namespace Builder.UI
         [SerializeField] private Image image;
         [SerializeField] private TMP_Text text;
 
-        [SerializeField] private ObjectsController.Space space = ObjectsController.Space.Local;
+        [SerializeField] private SelectionService.Space space = SelectionService.Space.Local;
 
         private void Start()
         {
-            space = ObjectsController.GetSpace();
+            space = SelectionService.GetSpace();
             UpdateIcon();
+        }
+
+        private void Update()
+        {
+            if (KeyboardService.GetDown(Keymap.Tool_Space))
+            {
+                Click();
+            }
         }
 
         public void Click()
         {
-            space = ObjectsController.GetSpace();
-            if (space == ObjectsController.Space.Local)
+            space = SelectionService.GetSpace();
+            if (space == SelectionService.Space.Local)
             {
-                space = ObjectsController.Space.Global;
+                space = SelectionService.Space.Global;
             }
             else
             {
-                space = ObjectsController.Space.Local;
+                space = SelectionService.Space.Local;
             }
 
-            ObjectsController.ChangeSpace(space);
+            SelectionService.ChangeSpace(space);
             UpdateIcon();
         }
 

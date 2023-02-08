@@ -21,11 +21,11 @@ namespace Builder
 
             public Axis Axis => axis;
 
-            public void Init(string name, ObjectsController objectsController)
+            public void Init(string name, SelectionService selectionService)
             {
                 box = handler.AddComponent<BoxCollider>();
                 gizmoHandle = handler.AddComponent<GizmoHandle>();
-                GizmoHandle.Init(objectsController, Axis, name);
+                GizmoHandle.Init(selectionService, Axis, name);
             }
         }
         
@@ -33,12 +33,13 @@ namespace Builder
         [SerializeField] private Sprite icon;
         [SerializeField] private GameObject gizmo;
         [SerializeField] private List<AxisOption> list;
-
+        [SerializeField] private Keymap key;
         
         
-        private ObjectsController objectsController;
+        private SelectionService _selectionService;
 
         public UnityEvent<List<GameObject>, GameObject> ToolActive = new UnityEvent<List<GameObject>, GameObject>();
+        public UnityEvent<List<GameObject>> ToolDisable = new UnityEvent<List<GameObject>>();
         public UnityEvent<List<GameObject>, AxisOption> HandleActionStart = new UnityEvent<List<GameObject>, AxisOption>();
         public UnityEvent<List<GameObject>, AxisOption> HandleAction = new UnityEvent<List<GameObject>, AxisOption>();
         public UnityEvent<bool> ChangeToolState = new UnityEvent<bool>();
@@ -47,14 +48,19 @@ namespace Builder
 
         public string Name => name;
 
+        public Keymap Key => key;
+
+        public bool Dragged => dragged;
+
         private Tween animation;
+        private bool dragged;
         
-        public void Init(ObjectsController objectsController)
+        public void Init(SelectionService selectionService)
         {
-            this.objectsController = objectsController;
+            this._selectionService = selectionService;
             for (int i = 0; i < list.Count; i++)
             {
-                list[i].Init(name, objectsController);
+                list[i].Init(name, selectionService);
             }
         }
 
@@ -92,15 +98,35 @@ namespace Builder
         {
             if (CalculateAction(selection))
             {
+                dragged = true;
                 GizmoPosition(selection, animate);
             }
             else
             {
+                if (Dragged)
+                {
+                    dragged = false;
+                    ToolDisable.Invoke(selection);
+                }
                 GizmoPosition(selection, false);
             }
+
+            ScaleGizmo(selection);
             ToolActive.Invoke(selection, gizmo);
         }
 
+        public void ScaleGizmo(List<GameObject> selected)
+        {
+            if (selected.Count == 0) return;
+            Vector3 center = Vector3.zero;
+            foreach(var item in selected)
+            {
+                center += item.transform.position;
+            }
+            center = center / selected.Count;
+            gizmo.transform.localScale = Vector3.one * ((center - _selectionService.Manager.PlayerService.Camera.transform.position).magnitude / 15f);
+        }
+        
         public bool CalculateAction(List<GameObject> selection)
         {
             var axis = FindAxis();
@@ -156,15 +182,16 @@ namespace Builder
             }
         }
         
-        public void UnSelect()
+        public void UnSelect(List<GameObject> instanceSelected)
         {
             Active(false);
+            ToolDisable.Invoke(instanceSelected);
             ChangeToolState.Invoke(false);
         }
 
         public void Select()
         {
-            Active(objectsController.Selection.Count != 0);
+            Active(_selectionService.Selection.Count != 0);
             ChangeToolState.Invoke(true);
         }
 

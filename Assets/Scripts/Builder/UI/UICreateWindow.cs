@@ -137,11 +137,11 @@ namespace Builder.UI
         public Folder Holder => holder;
 
 
-        public override void Init(UITabsManager tabsManager)
+        public override void Init(Manager windowManager)
         {
-            base.Init(tabsManager);
+            base.Init(windowManager);
             pageDrawer.Init(this);
-            tabsManager.StartCoroutine(CreateItems());
+            windowManager.StartCoroutine(CreateItems());
         }
 
         IEnumerator CreateItems()
@@ -161,7 +161,7 @@ namespace Builder.UI
             
             List<Folder> allFolders = new List<Folder>(10);
 
-            foreach (var item in tabsManager.Manager.ItemsGetter.BuildParts)
+            foreach (var item in Manager.ItemsService.BuildParts)
             {
 
                 light.enabled = true;
@@ -259,7 +259,7 @@ namespace Builder.UI
 
         public void CreateItem(Item item)
         {
-            tabsManager.Manager.Controller.SpawnItem(item);
+            Manager.PlayerService.SpawnItem(item);
         }
     }
 }

@@ -1,15 +1,15 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Builder.UI
 {
-    public class UITabsManager : UIController
+    public class UIWindowsManager : UIController
     {
+            
         [System.Serializable]
         public class HotKeyWin
         {
-            [SerializeField] private KeyCode key;
+            [SerializeField] private Keymap key;
             [SerializeField] private UIOpenWindow obj;
             public bool Opened => obj.Opened;
 
@@ -17,7 +17,7 @@ namespace Builder.UI
             
             public bool Check()
             {
-                if (Input.GetKeyDown(key))
+                if (KeyboardService.GetDown(key))
                 {
                     obj.OpenClose();
                     return true;
@@ -28,29 +28,10 @@ namespace Builder.UI
         }
 
         [SerializeField] private List<HotKeyWin> hotkey;
-        [SerializeField] private Manager manager;
 
-        [SerializeField] private List<GameObject> overUI = new List<GameObject>();
-
-        public Manager Manager => manager;
-
-
-        public void Over(GameObject obj, bool over)
-        {
-            if (over)
-            {
-                if (!overUI.Contains(obj))
-                {
-                    overUI.Add(obj);
-                }
-            }
-            else
-            {
-                overUI.Remove(obj);
-            }
-        }
-
-        public bool HaveOpenedWindowsOrUI()
+    
+    
+        public bool HaveOpenedWindows()
         {
             for (int i = 0; i < hotkey.Count; i++)
             {
@@ -59,9 +40,6 @@ namespace Builder.UI
                     return true;
                 }
             }
-
-            if (overUI.Count != 0) return true;
-            
             return false;
         }
 

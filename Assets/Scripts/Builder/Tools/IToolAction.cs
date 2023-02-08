@@ -9,5 +9,7 @@ namespace Builder.Tools
         public void Action(List<GameObject> selection, Tool.AxisOption handle);
 
         public void UpdateAction(List<GameObject> selection, GameObject gizmo);
+
+        public void RemoveAction(List<GameObject> selection);
     }
 }

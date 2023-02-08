@@ -12,15 +12,15 @@ namespace Builder.UI
         [SerializeField] private UIButton spaceButtons;
         void Start()
         {
-            spaceButtons.Init(tabsManager);
-            foreach (var tool in tabsManager.Manager.ObjectsController.Tools)
+            spaceButtons.Init(Manager.UIWindowsService);
+            foreach (var tool in Manager.SelectionService.Tools)
             {
                 var it = Instantiate(item.gameObject, item.transform.parent);
                 var icon = it.transform.GetChild(0).GetComponent<Image>();
                 icon.sprite = tool.Icon;
                 
                 it.GetComponent<Button>().onClick.AddListener(delegate { SelectTool(tool.Name); });
-                it.GetComponent<UIButton>().Init(tabsManager);
+                it.GetComponent<UIButton>().Init(Manager.UIWindowsService);
                 icon.DOColor(Color.gray, 0);
                 tool.ChangeToolState.AddListener(delegate(bool state)
                 {
@@ -36,7 +36,7 @@ namespace Builder.UI
 
         public void SelectTool(string str)
         {
-            ObjectsController.SelectTool(str);
+            SelectionService.SelectTool(str);
         }
 
     }

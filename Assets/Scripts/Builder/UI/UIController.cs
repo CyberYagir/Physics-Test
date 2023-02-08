@@ -6,14 +6,16 @@ namespace Builder.UI
     public class UIController : MonoBehaviour
     {
         [SerializeField] private List<UIController> subItems;
-        protected UITabsManager tabsManager;
+        private Manager manager;
 
-        public virtual void Init(UITabsManager tabsManager)
+        protected Manager Manager => manager;
+
+        public virtual void Init(Manager manager)
         {
-            this.tabsManager = tabsManager;
+            this.manager = manager;
             foreach (var i in subItems)
             {
-                i.Init(tabsManager);
+                i.Init(manager);
             }
         }
         

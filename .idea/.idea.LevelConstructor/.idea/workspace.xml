@@ -2,12 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f79fce36-801c-4d24-8acb-7d9928385816" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/HandleMathUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/HandleMathUtils.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Axis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Axis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/BuilderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/BuilderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/GizmoHandle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/GizmoHandle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/ItemsGetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/ItemsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/ItemsGetter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/ItemsService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/ObjectsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/ObjectsController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/IToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/IToolAction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/MoveToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/MoveToolAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/RotateToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/RotateToolAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ScaleToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ScaleToolAction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ToolAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIChangeMatrix.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIChangeMatrix.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UICreateWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UICreateWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISelectToolButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISelectToolButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UITabsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UITabsManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIService.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,23 +44,27 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UITabsManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/ObjectsController_Static.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Playground/MovingPlatform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIOpenSubFolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/e5/ddd92a11/Void.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ad3eaa0878d94cbe8e45f9c494d7164713bc00/72/d21d0c75/UnityEvent`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Tools/RotateToolAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10cd47be429140a4ac7e6f63cc71856d6000/13/36fe2a33/AssetBundle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Editor/CreateUIFoldersList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/BuilderController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/ObjectsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packs/Yagir.inc/ModsLoader/Scripts/ModsManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/ItemsGetter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/ItemsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Manager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/GizmoHandle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/KeyboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Scripts/SingleSun.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Menu/DesingnersDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CursorManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Tools/MoveToolAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/0d/8a88ef4d/ValueTuple`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Menu/ButtonAnimations.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MacroExpansionManager">
@@ -121,7 +142,9 @@
       <workItem from="1675533088611" duration="20938000" />
       <workItem from="1675631605541" duration="6910000" />
       <workItem from="1675678627013" duration="26695000" />
-      <workItem from="1675763649142" duration="1888000" />
+      <workItem from="1675763649142" duration="26546000" />
+      <workItem from="1675848227635" duration="5402000" />
+      <workItem from="1675866918016" duration="13782000" />
     </task>
     <servers />
   </component>

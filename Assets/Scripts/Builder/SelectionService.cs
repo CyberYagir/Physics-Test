@@ -1,12 +1,10 @@
-using System;
 using System.Collections.Generic;
-using EPOOutline;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Builder
 {
-    public class ObjectsController : MonoBehaviour
+    public partial class SelectionService : MonoBehaviour
     {
         public enum Space
         {
@@ -14,7 +12,7 @@ namespace Builder
         }
         
         
-        private static ObjectsController Instance;
+        private static SelectionService Instance;
 
         [SerializeField] private List<GameObject> selected;
         [SerializeField] private List<Tool> tools;
@@ -45,7 +43,7 @@ namespace Builder
         }
         private void Update()
         {
-            if (!Manager.TabsManager.HaveOpenedWindowsOrUI())
+            if (!Manager.UIWindowsService.HaveOpenedWindowsOrUI())
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
@@ -69,11 +67,23 @@ namespace Builder
                     currentTool.Update(Selection, true);
                 }
             }
+
+            if (!Input.GetKey(KeyCode.Mouse1) && tools.Find(x=>x.Dragged) == null)
+            {
+                foreach (var tool in tools)
+                {
+                    if (KeyboardService.GetDown(tool.Key))
+                    {
+                        SelectTool(tool.Name);
+                        break;
+                    }
+                }
+            }
         }
 
         public bool CalculateGizmoProcess()
         {
-            Ray ray = Manager.Controller.Camera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Manager.PlayerService.Camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Gizmo")))
             {
                 gizmoHandled = true;
@@ -89,7 +99,7 @@ namespace Builder
         
         private void CalculateSelectionProcess()
         {
-            Ray ray = Manager.Controller.Camera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Manager.PlayerService.Camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Default", "Player")))
             {
                 if (hit.collider != null)
@@ -111,70 +121,6 @@ namespace Builder
                     ClearSelect();
                 }
             }
-        }
-        
-        
-        
-        
-        
-        public static void SelectObject(GameObject obj, bool multiple)
-        {
-
-            if (Instance.selected.Contains(obj) && multiple)
-            {
-                Instance.selected.Remove(obj);
-                obj.GetComponent<Outlinable>().enabled = false;
-                return;
-            }
-            
-            if (Instance.selected != null && !multiple)
-            {
-                ClearSelect();
-            }
-            
-            Instance.selected.Add(obj);
-            obj.GetComponent<Outlinable>().enabled = true;
-            Instance.ChangeSelect.Invoke();
-        }
-
-        public static void ClearSelect()
-        {
-            foreach (var item in Instance.selected)
-            {
-                item.GetComponent<Outlinable>().enabled = false;
-            }
-            Instance.selected.Clear();
-            Instance.ChangeSelect.Invoke();
-        }
-
-        public static void SelectTool(string str)
-        {
-            if (Instance.currentTool != null)
-            {
-                Instance.currentTool.UnSelect();
-            }
-            Instance.currentTool = Instance.Tools.Find(x => x.Name == str);
-
-            if (Instance.currentTool != null)
-            {
-                Instance.currentTool.Select();
-                Instance.currentTool.Update(Instance.selected, false);
-            }
-        }
-    
-        public static Manager GetManager()
-        {
-            return Instance.manager;
-        }
-
-        public static Space GetSpace()
-        {
-            return Instance.space;
-        }
-
-        public static void ChangeSpace(Space space)
-        {
-            Instance.space = space;
         }
     }
 }

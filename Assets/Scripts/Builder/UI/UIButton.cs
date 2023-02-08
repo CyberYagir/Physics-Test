@@ -1,3 +1,4 @@
+using System.Runtime.Serialization;
 using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,20 +7,20 @@ namespace Builder.UI
 {
     public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        private UITabsManager tabs;
-        public void Init(UITabsManager tabs)
+        private UIService _window;
+        public void Init(UIService window)
         {
-            this.tabs = tabs;
+            this._window = window;
         }
         public void OnPointerEnter(PointerEventData eventData)
         {
-            tabs.Over(gameObject, true);
+            _window.Over(gameObject, true);
             CursorManager.SetCursor(CursorManager.CursorState.Hand);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            tabs.Over(gameObject, false);
+            _window.Over(gameObject, false);
             CursorManager.SetCursor(CursorManager.CursorState.Pointer);
         }
     }

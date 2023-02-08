@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Builder
 {
-    public class ItemsGetter : MonoBehaviour
+    public class ItemsService : MonoBehaviour
     {
         [SerializeField] private List<GameObject> objectsList;
         [SerializeField] private List<BuildPart> buildParts;

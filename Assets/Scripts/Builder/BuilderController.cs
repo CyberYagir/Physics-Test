@@ -1,4 +1,3 @@
-using System;
 using Base;
 using Builder.UI;
 using EPOOutline;
@@ -22,9 +21,10 @@ namespace Builder
             public void Update()
             {
                 float sp = speed * Time.deltaTime;
-                player.Translate(camera.forward * Input.GetAxis("Vertical") * sp, Space.World);
-                player.Translate(camera.right * Input.GetAxis("Horizontal") * sp, Space.World);
-                player.Translate(Vector3.up * Input.GetAxis("Jump") * sp, Space.World);
+                
+                player.Translate(camera.forward * KeyboardService.GetAxis(Keymap.Fly_Forward) * sp, Space.World);
+                player.Translate(camera.right * KeyboardService.GetAxis(Keymap.Fly_Right) * sp, Space.World);
+                player.Translate(Vector3.up * KeyboardService.GetAxis(Keymap.Fly_Up) * sp, Space.World);
 
 
                 speed += 5 * Input.GetAxis("Mouse ScrollWheel");
@@ -59,23 +59,23 @@ namespace Builder
         [SerializeField] private Move move;
         [SerializeField] private OutlineOptions outlines;
 
-        private UITabsManager tabs;
+        private UIService uiService;
         public Camera Camera => look.Camera;
 
-        public void Init(UITabsManager tabs)
+        public void Init(UIService window)
         {
             look.Init(transform);
             move.Init(transform);
 
-            this.tabs = tabs;
+            this.uiService = window;
             
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         private void Update()
         {
-            var canMove = Input.GetKey(KeyCode.Mouse1) && !tabs.HaveOpenedWindowsOrUI();
+            var canMove = Input.GetKey(KeyCode.Mouse1) && !uiService.HaveOpenedWindowsOrUI();
             Cursor.visible = !canMove;
             
             
