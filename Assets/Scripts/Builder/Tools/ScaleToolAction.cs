@@ -19,8 +19,8 @@ namespace Builder.Tools
         public void StartAction(List<GameObject> selection, Tool.AxisOption handle)
         {
             UpdateScalesZeros(selection);
-            scaler = new GameObject("Scaler").transform;
             Init(handle);
+            scaler = new GameObject("Scaler").transform;
             scale = Vector3.one;
             selectionDatas = GetCollection(selection);
             Vector3 center = Vector3.zero;
@@ -130,14 +130,6 @@ namespace Builder.Tools
         public void MoveParent(List<GameObject> selection)
         {
             parents.Clear();
-            // Vector3 center = Vector3.zero;
-            // foreach(var item in selection)
-            // {
-            //     center += item.transform.position;
-            // }
-
-            // scaler.position = center / selection.Count;
-            // scalerPos = scaler.position;
             if (selection.Count == 1)
             {
                 scaler.rotation = selection[0].transform.rotation;

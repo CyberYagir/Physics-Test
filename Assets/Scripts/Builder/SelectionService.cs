@@ -17,7 +17,7 @@ namespace Builder
         [SerializeField] private List<GameObject> selected;
         [SerializeField] private List<Tool> tools;
         [SerializeField] private Space space;
-        
+
         private Tool currentTool;
         private Manager manager;
         private bool gizmoHandled = false;
@@ -90,6 +90,7 @@ namespace Builder
                 if (currentTool != null)
                 {
                     currentTool.ActionStart(Selection);
+                    
                 }
                 return true;
             }

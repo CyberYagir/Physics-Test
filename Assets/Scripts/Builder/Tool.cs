@@ -14,17 +14,26 @@ namespace Builder
             [SerializeField] private Axis axis;
             [SerializeField] private GameObject handler;
 
-            private BoxCollider box;
+
+            private Renderer renderer;
+            private MeshCollider box;
+
+            public MeshCollider Box => box;
+
             private GizmoHandle gizmoHandle;
 
             public GizmoHandle GizmoHandle => gizmoHandle;
 
             public Axis Axis => axis;
 
+            public Renderer Renderer => renderer;
+
             public void Init(string name, SelectionService selectionService)
             {
-                box = handler.AddComponent<BoxCollider>();
+                box = handler.AddComponent<MeshCollider>();
+                box.convex = true;
                 gizmoHandle = handler.AddComponent<GizmoHandle>();
+                renderer = gizmoHandle.GetComponent<Renderer>();
                 GizmoHandle.Init(selectionService, Axis, name);
             }
         }
@@ -107,12 +116,39 @@ namespace Builder
                 {
                     dragged = false;
                     ToolDisable.Invoke(selection);
+                    ActiveHandlesColliders(true);
                 }
                 GizmoPosition(selection, false);
             }
 
             ScaleGizmo(selection);
             ToolActive.Invoke(selection, gizmo);
+        }
+
+        public void ActiveHandlesColliders(bool state)
+        {
+            for (var i = 0; i < list.Count; i++)
+            {
+                list[i].Box.enabled = state;
+                if (!state)
+                {
+                    if (!list[i].GizmoHandle.IsActive)
+                    {
+                        list[i].Renderer.sharedMaterial.color = GetAlphaColor(list[i].Renderer.sharedMaterial.color, 0.1f);
+                    }
+                }
+                else
+                {
+                    list[i].Renderer.sharedMaterial.color = GetAlphaColor(list[i].Renderer.sharedMaterial.color, 1f);
+                }
+            }
+
+
+            Color GetAlphaColor(Color cl, float alpha)
+            {
+                var color = new Color(cl.r, cl.g, cl.b, alpha);
+                return color;
+            }
         }
 
         public void ScaleGizmo(List<GameObject> selected)
@@ -138,9 +174,15 @@ namespace Builder
 
             return false;
         }
+
         public void ActionStart(List<GameObject> selection)
         {
-            HandleActionStart.Invoke(selection, FindAxis());
+            var axis = FindAxis();
+            if (axis != null)
+            {
+                HandleActionStart.Invoke(selection, axis);
+                ActiveHandlesColliders(false);
+            }
         }
 
         public AxisOption FindAxis()

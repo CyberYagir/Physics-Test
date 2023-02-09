@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Builder.Tools;
 using DG.Tweening;
 using UnityEngine;
 
@@ -43,17 +44,28 @@ namespace Builder
 
         private void OnMouseExit()
         {
-            transform.DOScale(localScale, 0.2f);
+            if (!isActive)
+            {
+                transform.DOScale(localScale, 0.2f);
+            }
         }
 
         private void OnMouseDown()
         {
-            isActive = true;    
+            if (SelectionService.GetTool().Name == tool)
+            {
+                isActive = true;
+            }
+            else
+            {
+                OnMouseUp();
+            }
         }
 
         private void OnMouseUp()
         {
             isActive = false;
+            transform.DOScale(localScale, 0.2f);
         }
 
         

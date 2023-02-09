@@ -41,8 +41,11 @@ namespace Builder
 
         public static void SelectTool(string str)
         {
+            
             if (Instance.currentTool != null)
             {
+                if (str == Instance.currentTool.Name) return;
+                
                 Instance.currentTool.UnSelect(Instance.selected);
             }
 
@@ -68,6 +71,11 @@ namespace Builder
         public static void ChangeSpace(Space space)
         {
             Instance.space = space;
+        }
+
+        public static Tool GetTool()
+        {
+            return Instance.currentTool;
         }
     }
 }
