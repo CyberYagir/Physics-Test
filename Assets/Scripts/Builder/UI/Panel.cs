@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Base.MapBuilder;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Builder.UI
 {
@@ -51,16 +53,29 @@ namespace Builder.UI
     public class Item : Panel
     {
         private RenderTexture icon;
-        private GameObject prefab;
-            
-        public Item(string name, RenderTexture icon, GameObject prefab) : base(name)
+        private BuildPart part;
+
+        public UnityEvent IconSetted = new UnityEvent();
+        
+        public Item(string name, RenderTexture icon, BuildPart part) : base(name)
         {
             this.icon = icon;
-            this.prefab = prefab;
+            this.part = part;
         }
 
         public RenderTexture Icon => icon;
 
-        public GameObject Prefab => prefab;
+        public GameObject Prefab => part.gameObject;
+
+        public BuildPart Part => part;
+
+        public void SetTexture(RenderTexture camTargetTexture)
+        {
+            icon = camTargetTexture;
+            if (icon != null)
+            {
+                IconSetted.Invoke();
+            }
+        }
     }
 }

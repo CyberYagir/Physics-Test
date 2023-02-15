@@ -3,19 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f79fce36-801c-4d24-8acb-7d9928385816" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KeyboardService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KeyboardService.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder/Materials/X.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder/Materials/X.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder/Materials/Y.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder/Materials/Y.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder/Materials/Z.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder/Materials/Z.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder/Models/Axieses.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder/Models/Axieses.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/GizmoHandle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/GizmoHandle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/ObjectsController_Static.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/ObjectsController_Static.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/RotateToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/RotateToolAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ScaleToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ScaleToolAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ToolAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/Panel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/Panel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UICreateWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UICreateWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIOpenWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIOpenWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +30,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9119325019494461b69fc6e438501d0324f000/a4/ef41b5db/LightLayerEnum.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/f9/34873be3/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -48,9 +45,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packs/Yagir.inc/ModsLoader/Scripts/ModsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/ItemsService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/KeyboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Manager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/GizmoHandle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/KeyboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Scripts/SingleSun.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Menu/DesingnersDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CursorManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -138,6 +135,9 @@
       <workItem from="1675866918016" duration="14380000" />
       <workItem from="1675961131059" duration="3010000" />
       <workItem from="1675977344468" duration="6509000" />
+      <workItem from="1676363609247" duration="6219000" />
+      <workItem from="1676370773622" duration="71000" />
+      <workItem from="1676496513387" duration="1211000" />
     </task>
     <servers />
   </component>

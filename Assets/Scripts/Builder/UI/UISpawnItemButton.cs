@@ -14,7 +14,7 @@ namespace Builder.UI
 
         private bool over = false;
         private Item item;
-
+        private Vector3 startImageScale;
 
         private UICreateWindow window;
 
@@ -24,11 +24,22 @@ namespace Builder.UI
             text.text = item.Name;
 
             this.window = window;
-            
+
             if (item.Icon != null)
+            {
                 image.texture = item.Icon;
+            }
             else
+            {
+                startImageScale = image.transform.localScale;
                 image.transform.localScale /= 2;
+                
+                item.IconSetted.AddListener(delegate
+                {
+                    image.transform.localScale = startImageScale;
+                    image.texture = item.Icon;
+                });
+            }
         }
 
         public void Click()

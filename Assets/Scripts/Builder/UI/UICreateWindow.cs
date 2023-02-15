@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Base.MapBuilder;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
@@ -59,10 +60,11 @@ namespace Builder.UI
                         var it = Instantiate(itemBtn, holder);
                         it.Init(selectedFolder.Items[i] as Item, window);
                         it.gameObject.SetActive(true);
-                        
                         drawedItems.Add(it.gameObject);
                     }
                 }
+
+                window.RenderInFolder(folder);
             }
 
             private UIOpenSubFolder CreateFolder(UIOpenSubFolder prefab, Folder item)
@@ -76,7 +78,7 @@ namespace Builder.UI
                 return subFolder;
             }
         }
-
+        
         [System.Serializable]
         public class SpawnMode
         {
@@ -114,6 +116,8 @@ namespace Builder.UI
             [SerializeField] private SpawnType type;
             [SerializeField] private List<TextSelection> hotkeys;
 
+            public SpawnType Type => type;
+
 
             public void Update()
             {
@@ -125,13 +129,18 @@ namespace Builder.UI
 
                 foreach (var key in hotkeys)
                 {
-                    key.Animate(type);
+                    key.Animate(Type);
                 }
             }
         }
 
         [SerializeField] private PageDrawer pageDrawer;
         [SerializeField] private SpawnMode spawnMode;
+        [SerializeField] private Camera renderCamera;
+        [SerializeField] private Light light;
+
+        private UIOpenWindow openClose;
+        
         
         private Folder holder = new Folder("Holder", null);
         public Folder Holder => holder;
@@ -140,32 +149,20 @@ namespace Builder.UI
         public override void Init(Manager windowManager)
         {
             base.Init(windowManager);
+            openClose = GetComponent<UIOpenWindow>();
             pageDrawer.Init(this);
             windowManager.StartCoroutine(CreateItems());
         }
 
         IEnumerator CreateItems()
         {
-            Camera cam = new GameObject("Camera Items").AddComponent<Camera>();
-            HDAdditionalCameraData cameraData = cam.gameObject.AddComponent<HDAdditionalCameraData>();
-            cameraData.volumeLayerMask = LayerMask.GetMask();
-            cam.enabled = false;
-            cam.cullingMask = LayerMask.GetMask("Gizmo");
-            cam.backgroundColor = Color.clear;
-
-            Light light = new GameObject("Light Items").AddComponent<Light>();
-            light.type = LightType.Directional;
-            light.transform.eulerAngles = new Vector3(40, -100, 0);
-            light.shadows = LightShadows.None;
-            
+            light.transform.parent = null;
+            light.enabled = false;
             
             List<Folder> allFolders = new List<Folder>(10);
 
             foreach (var item in Manager.ItemsService.BuildParts)
             {
-
-                light.enabled = true;
-                
                 if (item.PartName.Trim().Length != 0)
                 {
                     var path = GetFolders(item.PartName);
@@ -188,44 +185,16 @@ namespace Builder.UI
                     }
                     
                     
-                    var obj = Instantiate(item.gameObject, Vector3.zero, Quaternion.identity);
-                    ChangeLayer(obj.transform);
-                    var mesh = obj.GetComponent<MeshRenderer>();
-                    if (mesh)
-                    {
-                        cam.targetTexture = new RenderTexture(512, 512, 16, RenderTextureFormat.Default);
-                        cam.transform.position = mesh.bounds.center + mesh.bounds.size;
-                        
-                        obj.transform.position = item.PartPreview.Position;
-                        cam.transform.LookAt(mesh.bounds.center);
-                        
-                        obj.transform.rotation = Quaternion.Euler(item.PartPreview.Rotation);
-                        
-                        cam.Render();
 
-                    }
-                    else
-                    {
-                        cam.targetTexture = null;
-                    }
                     
                     if (lastFolder != null)
                     {
-                        lastFolder.Add(new Item(path.Last(), cam.targetTexture, item.gameObject));
+                        lastFolder.Add(new Item(path.Last(), null, item));
                     }
 
-                    void ChangeLayer(Transform trns)
-                    {
-                        trns.gameObject.layer = LayerMask.NameToLayer("Gizmo");
-                        foreach (Transform child in trns)
-                        {
-                            ChangeLayer(child);
-                        }
-                    }
-                    Destroy(obj.gameObject);
+
                 }
 
-                light.enabled = false;
                 yield return null;
             }
 
@@ -236,7 +205,77 @@ namespace Builder.UI
 
             MoveFolder(holder);
         }
+        IEnumerator RenderObject(Camera cam, BuildPart item, Item folderItem)
+        {
+            yield return null;
+            var obj = Instantiate(item.gameObject, Vector3.zero, Quaternion.identity);
+            light.enabled = true;
+            ChangeLayer(obj.transform);
+            var mesh = obj.GetComponent<MeshRenderer>();
+            if (mesh)
+            {
+                cam.targetTexture = new RenderTexture(256, 256, 16, RenderTextureFormat.Default);
+                cam.transform.position = mesh.bounds.center + mesh.bounds.size;
 
+                obj.transform.position = item.PartPreview.Position;
+                cam.transform.LookAt(mesh.bounds.center);
+
+                obj.transform.rotation = Quaternion.Euler(item.PartPreview.Rotation);
+
+                cam.Render();
+
+                folderItem.SetTexture(cam.targetTexture);
+
+            }
+            else
+            {
+                cam.targetTexture = null;
+            }
+
+            light.enabled = false;
+            obj.gameObject.SetActive(false);
+            yield return null;
+            Destroy(obj.gameObject);
+        }
+
+        IEnumerator RenderFolderItems(Folder folder)
+        {
+            for (int i = 0; i < folder.Items.Count; i++)
+            {
+                if ((folder.Items[i] is Item))
+                {
+                    var item = (folder.Items[i] as Item);
+
+                    if (item.Icon == null)
+                    {
+                        yield return StartCoroutine(RenderObject(renderCamera, item.Part, item));
+                    }
+                }
+            }
+        }
+
+        private void RenderInFolder(Folder folder)
+        {
+            StartCoroutine(RenderFolderItems(folder));
+        }
+
+
+        void ChangeLayer(Transform trns)
+        {
+            trns.gameObject.layer = LayerMask.NameToLayer("Gizmo");
+            var render = trns.GetComponent<MeshRenderer>();
+            if (render)
+            {
+                render.renderingLayerMask = (uint)LightLayerEnum.LightLayer5;
+            }
+            
+            
+            foreach (Transform child in trns)
+            {
+                ChangeLayer(child);
+            }
+        }
+        
         public void MoveFolder(Folder fld)
         {
             pageDrawer.DrawPage(fld);
@@ -260,6 +299,10 @@ namespace Builder.UI
         public void CreateItem(Item item)
         {
             Manager.PlayerService.SpawnItem(item);
+            if (spawnMode.Type == SpawnMode.SpawnType.Single)
+            {
+                openClose.OpenClose();
+            }
         }
     }
 }

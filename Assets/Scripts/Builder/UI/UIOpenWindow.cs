@@ -9,14 +9,17 @@ namespace Builder.UI
         [SerializeField] private RectTransform rectTransform;
         [SerializeField] private Vector2 finalSize;
 
+        private Canvas canvas;
+        
         private bool opened;
 
         public bool Opened => opened;
 
         private void Awake()
         {
-            rectTransform.sizeDelta = Vector2.zero;                    
-            gameObject.SetActive(false);
+            rectTransform.sizeDelta = Vector2.zero;
+            canvas = GetComponent<Canvas>();
+            canvas.enabled = false;
 
         }
 
@@ -25,14 +28,14 @@ namespace Builder.UI
             opened = !Opened;
             if (Opened)
             {
-                gameObject.SetActive(true);
+                canvas.enabled = true;
             }
             rectTransform.DOKill();
             rectTransform.DOSizeDelta(Opened ? finalSize : Vector2.zero, 0.2f).onComplete += () =>
             {
                 if (!Opened)
                 {
-                    gameObject.SetActive(false);
+                    canvas.enabled = false;
                 }
             };
         }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -41,7 +42,21 @@ namespace Builder
                 tool.Init(this);
             }
         }
+
         private void Update()
+        {
+            SelectObjects();
+            
+            if (IsGizmoNotDrag())
+            {
+                SelectDelete();
+                SelectDublicate();
+                SelectToolsByKeys();
+                
+            }
+        }
+
+        public void SelectObjects()
         {
             if (!Manager.UIWindowsService.HaveOpenedWindowsOrUI())
             {
@@ -67,20 +82,56 @@ namespace Builder
                     currentTool.Update(Selection, true);
                 }
             }
+        }
 
-            if (!Input.GetKey(KeyCode.Mouse1) && tools.Find(x=>x.Dragged) == null)
+        public void SelectToolsByKeys()
+        {
+
+            foreach (var tool in tools)
             {
-                foreach (var tool in tools)
+                if (KeyboardService.GetDown(tool.Key))
                 {
-                    if (KeyboardService.GetDown(tool.Key))
-                    {
-                        SelectTool(tool.Name);
-                        break;
-                    }
+                    SelectTool(tool.Name);
+                    break;
                 }
             }
         }
 
+        public void SelectDelete()
+        {
+            if (KeyboardService.GetDown(Keymap.Delete_Selection))
+            {
+                for (int i = 0; i < Selection.Count; i++)
+                {
+                    Destroy(Selection[i].gameObject);
+                }
+                Selection.Clear();
+            }
+        }
+
+        public void SelectDublicate()
+        {
+            if (KeyboardService.GetDown(Keymap.Dublicate_Selection))
+            {
+                List<GameObject> newItems = new List<GameObject>(Selection.Count);
+                for (int i = 0; i < Selection.Count; i++)
+                {
+                    newItems.Add(Instantiate(Selection[i].gameObject));
+                    newItems.Last().name = Selection[i].name;
+                }
+                ClearSelect();
+                for (int i = 0; i < newItems.Count; i++)
+                {
+                    SelectObject(newItems[i], true);
+                }
+            }
+        }
+        
+        public bool IsGizmoNotDrag()
+        {
+            return !Input.GetKey(KeyCode.Mouse1) && tools.Find(x => x.Dragged) == null;
+        }
+        
         public bool CalculateGizmoProcess()
         {
             Ray ray = Manager.PlayerService.Camera.ScreenPointToRay(Input.mousePosition);
