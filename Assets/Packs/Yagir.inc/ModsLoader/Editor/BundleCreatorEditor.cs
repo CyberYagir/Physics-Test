@@ -71,6 +71,7 @@ public class BundleCreatorEditor : MonoBehaviour
     {
         var selectedObject = CollectAssets(modFolder);
         selectedObject.RemoveAll(x => x is SceneAsset);
+
 #pragma warning disable 618
         BuildPipeline.BuildAssetBundle(mod, selectedObject.ToArray(), filesFolder + $"{mod.modName}.mod", BuildAssetBundleOptions.CollectDependencies | BuildAssetBundleOptions.CompleteAssets, BuildTarget.StandaloneWindows);
 #pragma warning restore 618

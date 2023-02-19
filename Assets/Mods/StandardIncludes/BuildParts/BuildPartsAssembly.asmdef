@@ -1,1 +1,0 @@
-{"name":"BuildPartsAssembly","rootNamespace":"BuildParts","references":["ModsLoader"],"includePlatforms":[],"excludePlatforms":[],"allowUnsafeCode":false,"overrideReferences":true,"precompiledReferences":["Mono.Cecil.dll"],"autoReferenced":true,"defineConstraints":[],"versionDefines":[],"noEngineReferences":false}

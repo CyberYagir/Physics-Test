@@ -156,7 +156,7 @@ namespace Builder.UI
 
         IEnumerator CreateItems()
         {
-            light.transform.parent = null;
+            light.transform.SetParent(null);
             light.enabled = false;
             
             List<Folder> allFolders = new List<Folder>(10);
@@ -210,22 +210,28 @@ namespace Builder.UI
             yield return null;
             var obj = Instantiate(item.gameObject, Vector3.zero, Quaternion.identity);
             light.enabled = true;
+            
             ChangeLayer(obj.transform);
-            var mesh = obj.GetComponent<MeshRenderer>();
-            if (mesh)
+            var bounds = new Bounds(Vector3.zero, Vector3.zero);
+            var mesh = obj.GetComponentsInChildren<MeshRenderer>();
+            
+            if (mesh.Length != 0)
             {
                 cam.targetTexture = new RenderTexture(256, 256, 16, RenderTextureFormat.Default);
-                cam.transform.position = mesh.bounds.center + mesh.bounds.size;
+               
+                for (int i = 0; i < mesh.Length; i++)
+                {
+                    bounds.Encapsulate(mesh[i].bounds);
+                }
 
+                cam.transform.position = bounds.center + bounds.size;
                 obj.transform.position = item.PartPreview.Position;
-                cam.transform.LookAt(mesh.bounds.center);
-
+                cam.transform.LookAt(bounds.center);
                 obj.transform.rotation = Quaternion.Euler(item.PartPreview.Rotation);
 
                 cam.Render();
 
                 folderItem.SetTexture(cam.targetTexture);
-
             }
             else
             {
@@ -298,11 +304,12 @@ namespace Builder.UI
 
         public void CreateItem(Item item)
         {
-            Manager.PlayerService.SpawnItem(item);
+            var obj = Manager.PlayerService.SpawnItem(item);
             if (spawnMode.Type == SpawnMode.SpawnType.Single)
             {
                 openClose.OpenClose();
             }
+        
         }
     }
 }

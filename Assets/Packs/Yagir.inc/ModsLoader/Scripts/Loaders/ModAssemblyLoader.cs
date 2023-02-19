@@ -50,11 +50,11 @@ public class ModAssemblyLoader
             try
             {
                 assemblyDefinition = Mono.Cecil.AssemblyDefinition.ReadAssembly(dllPaths[i]);
-                Debug.LogWarning(Path.GetFileName(dllPaths[i]) + " loaded");
+                Debug.LogWarning(Path.GetFileName(dllPaths[i]) + " scripts loaded");
             }
             catch (Exception e)
             {
-                Debug.LogWarning(Path.GetFileName(dllPaths[i]) + " have error");
+                Debug.LogWarning(Path.GetFileName(dllPaths[i]) + " scripts have error");
                 continue;
             }
         }

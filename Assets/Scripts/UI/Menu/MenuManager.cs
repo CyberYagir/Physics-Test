@@ -17,6 +17,9 @@ namespace UI.Menu
         {
             fileSystem = new FileSystem();
             desingnersDrawer.Init(this);
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

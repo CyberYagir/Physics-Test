@@ -2,6 +2,7 @@ using Base;
 using Builder.UI;
 using EPOOutline;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Builder
 {
@@ -59,6 +60,8 @@ namespace Builder
         [SerializeField] private Move move;
         [SerializeField] private OutlineOptions outlines;
 
+
+        public UnityEvent<GameObject> CreateObject = new UnityEvent<GameObject>();
         private UIService uiService;
         public Camera Camera => look.Camera;
 
@@ -86,27 +89,27 @@ namespace Builder
             }
         }
 
-        public void SpawnItem(Item item)
+        public GameObject SpawnItem(Item item)
         {
             var camera = look.Camera.transform;
             if (Physics.Raycast(look.Camera.transform.position, look.Camera.transform.forward, out RaycastHit hit))
             {
                 if (hit.distance > 20)
                 {
-                    Create(camera.position + camera.forward * 5);
+                    return Create(camera.position + camera.forward * 5);
                 }
                 else
                 {
-                    Create(hit.point);
+                    return Create(hit.point);
                 }
             }
             else
             {
-                Create(camera.position + camera.forward * 5);
+                return Create(camera.position + camera.forward * 5);
             }
 
 
-            void Create(Vector3 point)
+            GameObject Create(Vector3 point)
             {
                 var obj = Instantiate(item.Prefab, point, item.Prefab.transform.rotation);
                 var outlinable = obj.AddComponent<Outlinable>();
@@ -119,8 +122,10 @@ namespace Builder
                 outlines.Set(outlinable);
 
                 obj.name = item.Name;
+                CreateObject.Invoke(obj);
+                return obj;
             }
-            
+
         }
     }
 }

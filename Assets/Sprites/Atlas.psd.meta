@@ -38,6 +38,9 @@ TextureImporter:
   - first:
       213: -4272707242783423304
     second: Atlas_11
+  - first:
+      213: 1726203059708922746
+    second: Atlas_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -378,7 +381,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -386,6 +389,27 @@ TextureImporter:
       bones: []
       spriteID: 8b4c7a4866b44b4c0800000000000000
       internalID: -4272707242783423304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b84287984b4f710800000000000000
+      internalID: 1726203059708922746
       vertices: []
       indices: 
       edges: []

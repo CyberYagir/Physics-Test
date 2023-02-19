@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Base.MapBuilder;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,6 +25,7 @@ namespace Builder
         private bool gizmoHandled = false;
         
         public UnityEvent ChangeSelect = new UnityEvent();
+        public UnityEvent<GameObject> DeleteSelect = new UnityEvent<GameObject>();
         
         public List<Tool> Tools => tools;
         public List<GameObject> Selection => selected;
@@ -103,6 +105,7 @@ namespace Builder
             {
                 for (int i = 0; i < Selection.Count; i++)
                 {
+                    DeleteSelect.Invoke(Selection[i].gameObject);
                     Destroy(Selection[i].gameObject);
                 }
                 Selection.Clear();
@@ -156,7 +159,7 @@ namespace Builder
             {
                 if (hit.collider != null)
                 {
-                    SelectObject(hit.transform.root.gameObject, Input.GetKey(KeyCode.LeftShift));
+                    SelectObject(hit.transform.GetComponentInParent<BuildPart>().gameObject, Input.GetKey(KeyCode.LeftShift));
                 }
                 else
                 {

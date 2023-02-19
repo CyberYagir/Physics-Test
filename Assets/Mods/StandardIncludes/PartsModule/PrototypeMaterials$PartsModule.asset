@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58c968702912434a8fd420feb7ffb5f, type: 3}
+  m_Name: PrototypeMaterials$PartsModule
+  m_EditorClassIdentifier: 
+  materials:
+  - materialName: Prototype/World Grid
+    material: {fileID: 2100000, guid: 88045f5733e898f499f661185f244b85, type: 2}
+  - materialName: Prototype/Local Grid
+    material: {fileID: 2100000, guid: 18de79eabf059594e906444317957f30, type: 2}

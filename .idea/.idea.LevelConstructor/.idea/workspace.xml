@@ -3,15 +3,67 @@
   <component name="ChangeListManager">
     <list default="true" id="f79fce36-801c-4d24-8acb-7d9928385816" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KeyboardService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KeyboardService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/BuildParts.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/BuildParts.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/BuildPartsAssembly.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/BuildPartsAssembly.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Capsule$BuildParts.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Capsule$BuildParts.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Cone$BuildParts.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Cone$BuildParts.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Cube$BuildParts.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Cube$BuildParts.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Cylinder$BuildParts.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Cylinder$BuildParts.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Plane$BuildParts.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Plane$BuildParts.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Point Light$BuildParts.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Point Light$BuildParts.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Sphere$BuildParts.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Sphere$BuildParts.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Spot Light$BuildParts.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Spot Light$BuildParts.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Sun$BuildParts.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Sun$BuildParts.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Tor$BuildParts.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Items/Tor$BuildParts.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Scripts/SingleSun.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Scripts/SingleSun.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Cone.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Cone.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Tor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/Models/Tor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/Yagir.inc/ModsLoader/Editor/BundleCreatorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/Yagir.inc/ModsLoader/Editor/BundleCreatorEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/Yagir.inc/ModsLoader/Scripts/Loaders/ModAssemblyLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/Yagir.inc/ModsLoader/Scripts/Loaders/ModAssemblyLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder/Materials/Y.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder/Materials/Y.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder/Models/Axieses.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder/Models/Axieses.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/GameVolume.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/GameVolume.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/GizmoVolume.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/GizmoVolume.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/BuilderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/BuilderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/ItemsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/ItemsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Manager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/Panel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/Panel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UICreateWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UICreateWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIOpenWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIOpenWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/ModsMoverAfterBuild.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ModsMoverAfterBuild.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Playground/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Playground/New Terrain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/ProceduralGrid/M_ProceduralGrid_World.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/ProceduralGrid/M_ProceduralGrid_World.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mouse/Dont.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mouse/Dont.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mouse/Hand.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mouse/Hand.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mouse/Pointer.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mouse/Pointer.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mods/BuildParts.modFile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mods/loader.chain" beforeDir="false" afterPath="$PROJECT_DIR$/Mods/loader.chain" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,29 +83,37 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9119325019494461b69fc6e438501d0324f000/a4/ef41b5db/LightLayerEnum.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/MaterialsHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/f9/34873be3/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/ObjectsLinker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Playground/MovingPlatform.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIOpenSubFolder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/e5/ddd92a11/Void.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ad3eaa0878d94cbe8e45f9c494d7164713bc00/72/d21d0c75/UnityEvent`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Tools/RotateToolAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10cd47be429140a4ac7e6f63cc71856d6000/13/36fe2a33/AssetBundle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Editor/CreateUIFoldersList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/BuilderController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Packs/Yagir.inc/ModsLoader/Scripts/ModsManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/ItemsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/KeyboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Manager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/GizmoHandle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mods/StandardIncludes/BuildParts/Scripts/SingleSun.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ad3eaa0878d94cbe8e45f9c494d7164713bc00/58/6812fc7b/Cursor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Menu/DesingnersDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/HierarchyService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CursorManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Tools/MoveToolAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/0d/8a88ef4d/ValueTuple`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Menu/ButtonAnimations.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIHierarchyItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/Shell/ConsoleSceneManagement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5980a88ae5314d4b9811fcde1734d236568bc0/18/43e58e57/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Playground/MovingPlatform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIOpenSubFolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/e5/ddd92a11/Void.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ad3eaa0878d94cbe8e45f9c494d7164713bc00/72/d21d0c75/UnityEvent`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Scripts/SingleSun.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packs/Yagir.inc/ModsLoader/Scripts/ModsManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/ItemsService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/Shell/ConsoleService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/Tools/MoveToolAction.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="dy42edzx" />
@@ -72,6 +132,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="pidor" />
+    </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
@@ -138,6 +203,11 @@
       <workItem from="1676363609247" duration="6219000" />
       <workItem from="1676370773622" duration="71000" />
       <workItem from="1676496513387" duration="1211000" />
+      <workItem from="1676538948525" duration="7038000" />
+      <workItem from="1676580041129" duration="5430000" />
+      <workItem from="1676650181679" duration="10113000" />
+      <workItem from="1676801664423" duration="14844000" />
+      <workItem from="1676825408788" duration="72000" />
     </task>
     <servers />
   </component>

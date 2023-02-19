@@ -13,7 +13,7 @@ namespace UnityCustom
             var buildDir = Path.GetDirectoryName(pathToBuiltProject) + "/Mods/";
             if (Directory.Exists(buildDir))
             {
-                Directory.Delete(buildDir);
+                Directory.Delete(buildDir, true);
             }
 
             Directory.CreateDirectory(buildDir);

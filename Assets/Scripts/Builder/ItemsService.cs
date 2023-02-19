@@ -8,7 +8,7 @@ namespace Builder
     {
         [SerializeField] private List<GameObject> objectsList;
         [SerializeField] private List<BuildPart> buildParts;
-        [SerializeField] private List<Material> materials;
+        [SerializeField] private List<MaterialsHolder> materials;
         public List<BuildPart> BuildParts => buildParts;
 
         public void Init()
@@ -16,7 +16,7 @@ namespace Builder
             foreach (var mod in ModsManager.Instance.modLoader.mods)
             {
                 objectsList.AddRange(mod.data.prefabs);
-                materials.AddRange(mod.GetAllAssetsType<Material>());
+                materials.AddRange(mod.GetAllAssetsType<MaterialsHolder>());
             }
 
             for (int i = 0; i < objectsList.Count; i++)
