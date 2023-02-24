@@ -36,6 +36,7 @@ namespace Base.Shell
         [SerializeField] private TMP_Text outputText;
         [SerializeField] private List<LogsColors> colors;
 
+        private string lastMessage;
         private bool cursorVisible;
         private CursorLockMode cursorMode;
         
@@ -55,6 +56,7 @@ namespace Base.Shell
             else
             {
                 Instance = this;
+                outputText.gameObject.SetActive(false);
                 transform.parent = null;
                 DontDestroyOnLoad(gameObject);
             }
@@ -74,7 +76,16 @@ namespace Base.Shell
 
         private void ApplicationOnlogMessageReceived(string condition, string stacktrace, LogType type)
         {
-            ShowText(condition, type);
+            if (condition != lastMessage)
+            {
+                if (outputText.text.Length > 4086)
+                {
+                    ClearText();
+                }
+
+                ShowText(condition, type);
+                lastMessage = condition;
+            }
         }
 
         private void LateUpdate()
@@ -164,6 +175,7 @@ namespace Base.Shell
                 {
                     rectTransform.DOKill();
                     canvas.enabled = true;
+                    outputText.gameObject.SetActive(true);
                     rectTransform.DOSizeDelta(new Vector2(rectTransform.sizeDelta.x, 500), 0.2f);
                     input.Select();
                     cursorVisible = Cursor.visible;
@@ -184,12 +196,20 @@ namespace Base.Shell
             Instance.rectTransform.DOSizeDelta(new Vector2(Instance.rectTransform.sizeDelta.x, 0), 0.2f).onComplete += () =>
             {
                 Instance.canvas.enabled = false;
+                Instance.outputText.gameObject.SetActive(false);
             };
 
             Cursor.visible = Instance.cursorVisible;
             Cursor.lockState = Instance.cursorMode;
-                    
-            EventSystem.current.SetSelectedGameObject(null);
+
+            if (EventSystem.current != null)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+            }
+            else
+            {
+                new GameObject("EventSystem").AddComponent<EventSystem>();
+            }
 
             Instance.isOpened = false;
         }

@@ -6,6 +6,8 @@ namespace Builder
 {
     public class ItemsService : MonoBehaviour
     {
+        private static ItemsService Instance;
+        
         [SerializeField] private List<GameObject> objectsList;
         [SerializeField] private List<BuildPart> buildParts;
         [SerializeField] private List<MaterialsHolder> materials;
@@ -13,6 +15,8 @@ namespace Builder
 
         public void Init()
         {
+            Instance = this;
+            
             foreach (var mod in ModsManager.Instance.modLoader.mods)
             {
                 objectsList.AddRange(mod.data.prefabs);
@@ -27,6 +31,28 @@ namespace Builder
                     buildParts.Add(part);
                 }
             }
+        }
+
+        
+        
+        public static BuildPart GetItem(string name)
+        {
+            if (Instance == null)
+            {
+                return null;
+            }
+
+            foreach (var item in Instance.buildParts)
+            {
+                var objName = item.name.Split('$')[0];
+                
+                if (objName.ToLower().Trim() == name.ToLower())
+                {
+                    return item;
+                }
+            }
+
+            return null;
         }
     }
 }

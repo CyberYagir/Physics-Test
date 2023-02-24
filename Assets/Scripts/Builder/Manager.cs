@@ -6,6 +6,8 @@ namespace Builder
 {
     public class Manager : MonoBehaviour
     {
+        public static Manager Instance { get; private set; }
+        
         [SerializeField] private ModsManager modsService;
         [SerializeField] private ItemsService itemsLoaderService;
         [SerializeField] private UIService uIWindowsService;
@@ -23,6 +25,7 @@ namespace Builder
 
         private void Awake()
         {
+            Instance = this;
             
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;

@@ -11,7 +11,7 @@ namespace Builder.UI
         {
             [SerializeField] private Keymap key;
             [SerializeField] private UIOpenWindow obj;
-            public bool Opened => obj.Opened;
+            public bool Opened => obj.Opened && obj.NotFreezeControls == false;
 
             public void Activate() => obj.gameObject.SetActive(true);
             

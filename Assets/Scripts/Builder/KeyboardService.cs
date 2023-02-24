@@ -13,6 +13,8 @@ namespace Builder
         Window_ItemsMananager,
     
         Dublicate_Selection, Delete_Selection,
+        
+        Window_Hierarchy
     }
 
     public class KeyboardService : MonoBehaviour

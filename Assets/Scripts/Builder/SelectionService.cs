@@ -26,6 +26,7 @@ namespace Builder
         
         public UnityEvent ChangeSelect = new UnityEvent();
         public UnityEvent<GameObject> DeleteSelect = new UnityEvent<GameObject>();
+        public UnityEvent<GameObject> DublicateSelect = new UnityEvent<GameObject>();
         
         public List<Tool> Tools => tools;
         public List<GameObject> Selection => selected;
@@ -78,11 +79,10 @@ namespace Builder
                         gizmoHandled = false;
                     }
                 }
-
-                if (currentTool != null)
-                {
-                    currentTool.Update(Selection, true);
-                }
+            }
+            if (currentTool != null)
+            {
+                currentTool.Update(Selection, true);
             }
         }
 
@@ -121,6 +121,7 @@ namespace Builder
                 {
                     newItems.Add(Instantiate(Selection[i].gameObject));
                     newItems.Last().name = Selection[i].name;
+                    DublicateSelect.Invoke(newItems.Last());
                 }
                 ClearSelect();
                 for (int i = 0; i < newItems.Count; i++)

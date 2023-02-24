@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Base.MapBuilder;
 using EPOOutline;
 using UnityEngine;
 
@@ -11,10 +13,13 @@ namespace Builder
         public static void SelectObject(GameObject obj, bool multiple)
         {
 
+            if (obj.GetComponent<BuildPart>() == null) return;
+            
             if (Instance.selected.Contains(obj) && multiple)
             {
                 Instance.selected.Remove(obj);
                 obj.GetComponent<Outlinable>().enabled = false;
+                Instance.ChangeSelect.Invoke();
                 return;
             }
 
@@ -76,6 +81,16 @@ namespace Builder
         public static Tool GetTool()
         {
             return Instance.currentTool;
+        }
+
+        public static List<GameObject> GetSelected()
+        {
+            if (Instance != null)
+            {
+                return Instance.Selection;
+            }
+
+            return new List<GameObject>();
         }
     }
 }

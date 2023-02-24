@@ -47,6 +47,8 @@ namespace Builder
                 opened = !opened;
             }
         }
+
+        private static HierarchyService Instance;
         
         [SerializeField] private Transform holder;
         [SerializeField] private List<OrderedItem> orderedItems = new List<OrderedItem>();
@@ -58,11 +60,14 @@ namespace Builder
 
         public void Init(BuilderController builderController, SelectionService selectionService)
         {
+            Instance = this;
             builderController.CreateObject.AddListener(AddItem);
+            selectionService.DublicateSelect.AddListener(AddItem);
             selectionService.DeleteSelect.AddListener(DeleteItem);
         }
         
 
+        
         public void AddItem(GameObject obj)
         {
             var item = new OrderedItem(obj, OrderedItems.Count, null);
@@ -85,6 +90,42 @@ namespace Builder
             OnChanged.Invoke();
         }
 
+
+
+        public bool CheckDeletedItems()
+        {
+            int count = 0;
+            count += orderedItems.RemoveAll(x => x.Target == null);
+            for (int i = 0; i < orderedItems.Count; i++)
+            {
+                if (orderedItems[i].Opened)
+                {
+                    count += ClearInstancesRecurvive(orderedItems[i]);
+                }
+            }
+
+            if (count != 0)
+            {
+                OnChanged.Invoke();
+                return true;
+            }
+
+            return false;
+        }
+
+        private int ClearInstancesRecurvive(OrderedItem item)
+        {
+            int count = item.OrderedItems.RemoveAll(x => x.Target == null);
+            for (int i = 0; i < item.OrderedItems.Count; i++)
+            {
+                if (item.OrderedItems[i].Opened)
+                {
+                    count += ClearInstancesRecurvive(item.OrderedItems[i]);
+                }
+            }
+            return count;
+        }
+
         public OrderedItem FindItem(GameObject item, List<OrderedItem> list)
         {
             for (int i = 0; i < list.Count; i++)
@@ -103,5 +144,6 @@ namespace Builder
 
             return null;
         }
+
     }
 }

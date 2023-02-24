@@ -89,7 +89,7 @@ namespace Builder
             }
         }
 
-        public GameObject SpawnItem(Item item)
+        public GameObject SpawnItem(GameObject item, string itemName)
         {
             var camera = look.Camera.transform;
             if (Physics.Raycast(look.Camera.transform.position, look.Camera.transform.forward, out RaycastHit hit))
@@ -111,7 +111,7 @@ namespace Builder
 
             GameObject Create(Vector3 point)
             {
-                var obj = Instantiate(item.Prefab, point, item.Prefab.transform.rotation);
+                var obj = Instantiate(item, point, item.transform.rotation);
                 var outlinable = obj.AddComponent<Outlinable>();
 
                 foreach (var rn in obj.GetComponentsInChildren<Renderer>())
@@ -121,7 +121,7 @@ namespace Builder
 
                 outlines.Set(outlinable);
 
-                obj.name = item.Name;
+                obj.name = itemName;
                 CreateObject.Invoke(obj);
                 return obj;
             }

@@ -10,6 +10,28 @@ using UnityEngine.UI;
 
 namespace Builder.UI
 {
+
+    public static class ItemsUtility
+    {
+        public static string[] GetFolders(string path)
+        {
+            if (path.Last() == '/')
+            {
+                path = path.Remove(path.Length - 1, 1);
+            }
+
+            return path.Split('/');
+        }
+
+        public static string GetName(string fullName)
+        {
+            var folders = GetFolders(fullName);
+
+            return folders.Last();
+        }
+
+    }
+
     public class UICreateWindow : UIController
     {
         [System.Serializable]
@@ -165,7 +187,7 @@ namespace Builder.UI
             {
                 if (item.PartName.Trim().Length != 0)
                 {
-                    var path = GetFolders(item.PartName);
+                    var path = ItemsUtility.GetFolders(item.PartName);
 
                     Folder lastFolder = Holder;
                     for (int i = 0; i < path.Length-1; i++)
@@ -189,7 +211,7 @@ namespace Builder.UI
                     
                     if (lastFolder != null)
                     {
-                        lastFolder.Add(new Item(path.Last(), null, item));
+                        lastFolder.Add(new Item(ItemsUtility.GetName(item.PartName), null, item));
                     }
 
 
@@ -292,24 +314,14 @@ namespace Builder.UI
             spawnMode.Update();
         }
 
-        public string[] GetFolders(string path)
-        {
-            if (path.Last() == '/')
-            {
-                path = path.Remove(path.Length - 1, 1);
-            }
-
-            return path.Split('/');
-        }
 
         public void CreateItem(Item item)
         {
-            var obj = Manager.PlayerService.SpawnItem(item);
+            var obj = Manager.PlayerService.SpawnItem(item.Prefab, item.Name);
             if (spawnMode.Type == SpawnMode.SpawnType.Single)
             {
                 openClose.OpenClose();
             }
-        
         }
     }
 }
