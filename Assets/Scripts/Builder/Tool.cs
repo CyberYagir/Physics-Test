@@ -233,7 +233,7 @@ namespace Builder
 
         public void Select()
         {
-            Active(_selectionService.Selection.Count != 0);
+            Active(_selectionService.SelectionBuildParts.Count != 0);
             ChangeToolState.Invoke(true);
         }
 

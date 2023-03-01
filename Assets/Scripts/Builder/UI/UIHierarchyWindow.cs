@@ -65,7 +65,6 @@ namespace Builder.UI
         [SerializeField] private ItemsPool pool;
 
         private RectTransform rectTransform;
-        private float screenWidth;
         private int screenHeight;
         
         private UIOpenWindow openWindow;
@@ -81,12 +80,11 @@ namespace Builder.UI
             
             
             rectTransform = GetComponent<RectTransform>();
-            screenWidth = Screen.width;
             openWindow = GetComponent<UIOpenWindow>();
             openWindow.AnimationEnd.AddListener(delegate(bool state)
             {
                 var uiRect = rectTransform.rect;
-                var targetWidth = state ? screenWidth - (uiRect.width * mainCanvas.transform.localScale.x) : screenWidth;           
+                var targetWidth = state ? Screen.width - (uiRect.width * mainCanvas.transform.localScale.x) : Screen.width;           
                 ChangeCameraWidth(targetWidth);
 
                 StopAllCoroutines();
@@ -103,7 +101,7 @@ namespace Builder.UI
         IEnumerator AnimateCameraSize(bool state)
         {
             var uiRect = rectTransform.rect;
-            var targetWidth = state ? screenWidth - (uiRect.width * mainCanvas.transform.localScale.x) : screenWidth;
+            var targetWidth = state ? Screen.width - (uiRect.width * mainCanvas.transform.localScale.x) : Screen.width;
 
             float time = 0;
             while (time < 0.2f)
@@ -120,13 +118,15 @@ namespace Builder.UI
             Manager.PlayerService.Camera.pixelRect = new Rect(0, 0, width, Screen.height);
         }
 
-        private List<GameObject> selectedObjects;
+        private List<GameObject> selectedObjects = new List<GameObject>(100);
 
         public void UpdateList()
         {
             pool.ResetRows();
+            selectedObjects.Clear();
 
-            selectedObjects = SelectionService.GetSelected();
+            selectedObjects.AddRange(SelectionService.GetSelected(false));
+            selectedObjects.AddRange(SelectionService.GetSelected(true));
 
             if (Manager.HierarchyService.CheckDeletedItems()) return;
 
@@ -138,10 +138,7 @@ namespace Builder.UI
 
         public void DrawItemRecursive(HierarchyService.OrderedItem item, bool selected)
         {
-            if (selected == false)
-            {
-                selected = selectedObjects.Contains(item.Target);
-            }
+            selected = selectedObjects.Contains(item.Target);
             pool.GetRow().Redraw(item, selected);
             if (!item.Opened) return;
             foreach (var it in item.OrderedItems)

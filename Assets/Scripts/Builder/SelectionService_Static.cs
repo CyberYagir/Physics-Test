@@ -13,34 +13,58 @@ namespace Builder
         public static void SelectObject(GameObject obj, bool multiple)
         {
 
-            if (obj.GetComponent<BuildPart>() == null) return;
-            
-            if (Instance.selected.Contains(obj) && multiple)
+            bool isBuildPart = obj.GetComponent<BuildPart>() != null;
+
+            if (isBuildPart)
             {
-                Instance.selected.Remove(obj);
-                obj.GetComponent<Outlinable>().enabled = false;
+                if (Instance.selectedBuildParts.Contains(obj) && multiple)
+                {
+                    Instance.selectedBuildParts.Remove(obj);
+                    obj.GetComponent<Outlinable>().enabled = false;
+                    Instance.ChangeSelect.Invoke();
+                    return;
+                }
+
+                if (Instance.selectedBuildParts != null && !multiple)
+                {
+                    ClearSelect();
+                }
+
+                Instance.selectedBuildParts.Add(obj);
+                obj.GetComponent<Outlinable>().enabled = true;
                 Instance.ChangeSelect.Invoke();
-                return;
             }
-
-            if (Instance.selected != null && !multiple)
+            else
             {
-                ClearSelect();
-            }
+                if (Instance.selectedParts.Contains(obj) && multiple)
+                {
+                    Instance.selectedParts.Remove(obj);
+                    Instance.ChangeSelect.Invoke();
+                    return;
+                }
 
-            Instance.selected.Add(obj);
-            obj.GetComponent<Outlinable>().enabled = true;
-            Instance.ChangeSelect.Invoke();
+                if (Instance.selectedParts != null && !multiple)
+                {
+                    ClearSelect();
+                }
+
+                Instance.selectedParts.Add(obj);
+                Instance.ChangeSelect.Invoke();
+            }
         }
 
         public static void ClearSelect()
         {
-            foreach (var item in Instance.selected)
+            foreach (var item in Instance.selectedBuildParts)
             {
-                item.GetComponent<Outlinable>().enabled = false;
+                var outlinable = item.GetComponent<Outlinable>();
+                if (outlinable != null)
+                {
+                    outlinable.enabled = false;
+                }
             }
-
-            Instance.selected.Clear();
+            Instance.selectedParts.Clear();
+            Instance.selectedBuildParts.Clear();
             Instance.ChangeSelect.Invoke();
         }
 
@@ -51,7 +75,7 @@ namespace Builder
             {
                 if (str == Instance.currentTool.Name) return;
                 
-                Instance.currentTool.UnSelect(Instance.selected);
+                Instance.currentTool.UnSelect(Instance.selectedBuildParts);
             }
 
             Instance.currentTool = Instance.Tools.Find(x => x.Name == str);
@@ -59,7 +83,7 @@ namespace Builder
             if (Instance.currentTool != null)
             {
                 Instance.currentTool.Select();
-                Instance.currentTool.Update(Instance.selected, false);
+                Instance.currentTool.Update(Instance.selectedBuildParts, false);
             }
         }
 
@@ -83,11 +107,11 @@ namespace Builder
             return Instance.currentTool;
         }
 
-        public static List<GameObject> GetSelected()
+        public static List<GameObject> GetSelected(bool additional)
         {
             if (Instance != null)
             {
-                return Instance.Selection;
+                return additional ? Instance.SelectionBuildParts : Instance.SelectionParts;
             }
 
             return new List<GameObject>();

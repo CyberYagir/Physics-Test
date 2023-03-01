@@ -16,7 +16,8 @@ namespace Builder
         
         private static SelectionService Instance;
 
-        [SerializeField] private List<GameObject> selected;
+        [SerializeField] private List<GameObject> selectedBuildParts = new List<GameObject>(100);
+        [SerializeField] private List<GameObject> selectedParts = new List<GameObject>(100);
         [SerializeField] private List<Tool> tools;
         [SerializeField] private Space space;
 
@@ -29,7 +30,8 @@ namespace Builder
         public UnityEvent<GameObject> DublicateSelect = new UnityEvent<GameObject>();
         
         public List<Tool> Tools => tools;
-        public List<GameObject> Selection => selected;
+        public List<GameObject> SelectionBuildParts => selectedBuildParts;
+        public List<GameObject> SelectionParts => selectedParts;
 
         public Manager Manager => manager;
 
@@ -82,7 +84,7 @@ namespace Builder
             }
             if (currentTool != null)
             {
-                currentTool.Update(Selection, true);
+                currentTool.Update(SelectionBuildParts, true);
             }
         }
 
@@ -103,12 +105,12 @@ namespace Builder
         {
             if (KeyboardService.GetDown(Keymap.Delete_Selection))
             {
-                for (int i = 0; i < Selection.Count; i++)
+                for (int i = 0; i < SelectionBuildParts.Count; i++)
                 {
-                    DeleteSelect.Invoke(Selection[i].gameObject);
-                    Destroy(Selection[i].gameObject);
+                    DeleteSelect.Invoke(SelectionBuildParts[i].gameObject);
+                    Destroy(SelectionBuildParts[i].gameObject);
                 }
-                Selection.Clear();
+                SelectionBuildParts.Clear();
             }
         }
 
@@ -116,11 +118,11 @@ namespace Builder
         {
             if (KeyboardService.GetDown(Keymap.Dublicate_Selection))
             {
-                List<GameObject> newItems = new List<GameObject>(Selection.Count);
-                for (int i = 0; i < Selection.Count; i++)
+                List<GameObject> newItems = new List<GameObject>(SelectionBuildParts.Count);
+                for (int i = 0; i < SelectionBuildParts.Count; i++)
                 {
-                    newItems.Add(Instantiate(Selection[i].gameObject));
-                    newItems.Last().name = Selection[i].name;
+                    newItems.Add(Instantiate(SelectionBuildParts[i].gameObject));
+                    newItems.Last().name = SelectionBuildParts[i].name;
                     DublicateSelect.Invoke(newItems.Last());
                 }
                 ClearSelect();
@@ -144,7 +146,7 @@ namespace Builder
                 gizmoHandled = true;
                 if (currentTool != null)
                 {
-                    currentTool.ActionStart(Selection);
+                    currentTool.ActionStart(SelectionBuildParts);
                     
                 }
                 return true;

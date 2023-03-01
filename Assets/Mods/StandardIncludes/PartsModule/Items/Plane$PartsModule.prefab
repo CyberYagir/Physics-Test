@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7560561676661758094}
   - component: {fileID: 9179049793050400475}
   - component: {fileID: 1526439297598934878}
-  - component: {fileID: 2947949255309445915}
   m_Layer: 0
   m_Name: Up
   m_TagString: Untagged
@@ -82,20 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2947949255309445915
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252387474590068865}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2107432003316624089
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7256080965434852054}
   - component: {fileID: -4607111159328028539}
+  - component: {fileID: 8304730695550128685}
   m_Layer: 0
   m_Name: Plane$PartsModule
   m_TagString: Untagged
@@ -144,3 +130,16 @@ MonoBehaviour:
   previewOptions:
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 45, y: 0, z: 0}
+--- !u!65 &8304730695550128685
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107432003316624089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.01, z: 1}
+  m_Center: {x: 0, y: -0.005, z: 0}

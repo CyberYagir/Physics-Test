@@ -7,21 +7,25 @@ namespace Builder.UI
 {
     public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        private UIService _window;
+        private UIService window;
+
         public void Init(UIService window)
         {
-            this._window = window;
+            this.window = window;
         }
+
         public void OnPointerEnter(PointerEventData eventData)
         {
-            _window.Over(gameObject, true);
             CursorManager.SetCursor(CursorManager.CursorState.Hand);
+            if (!window) return;
+            window.Over(gameObject, true);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _window.Over(gameObject, false);
             CursorManager.SetCursor(CursorManager.CursorState.Pointer);
+            if (!window) return;
+            window.Over(gameObject, false);
         }
     }
 }
