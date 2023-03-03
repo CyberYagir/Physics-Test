@@ -3,25 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="f79fce36-801c-4d24-8acb-7d9928385816" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LevelConstructor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Cone$PartsModule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Cone$PartsModule.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Plane$PartsModule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Plane$PartsModule.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Models/Tor$PartsModule.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Models/Tor$PartsModule.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Point Light$PartsModule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Point Light$PartsModule.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Spot Light$PartsModule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Spot Light$PartsModule.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Sun$PartsModule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Sun$PartsModule.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Tor$PartsModule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/Items/Tor$PartsModule.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/PartsModule.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mods/StandardIncludes/PartsModule/PartsModule.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder/Materials/Y.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder/Materials/Y.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder/Prefabs/UI/Console.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder/Prefabs/UI/Console.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Builder/Prefabs/UI/Item.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Builder/Prefabs/UI/Item.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Base/Shell/ConsoleService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Shell/ConsoleService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService_Static.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/SelectionService_Static.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIHierarchyItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIHierarchyItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIHierarchyWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIHierarchyWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Atlas.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mods/MaterialsModule.modFile" beforeDir="false" afterPath="$PROJECT_DIR$/Mods/MaterialsModule.modFile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/RotateToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/RotateToolAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ScaleToolAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/Tools/ScaleToolAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIModulesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIModulesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIOpenSubFolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIOpenSubFolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mods/PartsModule.modFile" beforeDir="false" afterPath="$PROJECT_DIR$/Mods/PartsModule.modFile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +59,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Menu/ButtonAnimations.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UISpawnItemButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/Shell/ConsoleSpawnManagement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIModuleButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder/UI/UIHierarchyItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/Shell/ConsoleHintItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/Shell/ConsoleSceneManagement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -182,6 +177,10 @@
       <workItem from="1677248991674" duration="15033000" />
       <workItem from="1677323744744" duration="3851000" />
       <workItem from="1677508603966" duration="5312000" />
+      <workItem from="1677689274752" duration="6934000" />
+      <workItem from="1677801035322" duration="822000" />
+      <workItem from="1677835431400" duration="1288000" />
+      <workItem from="1677856952013" duration="5000000" />
     </task>
     <servers />
   </component>

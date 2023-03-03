@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d68dd11cf00a584d82f230b66949cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: Base/Sun Light
+  partName: Base/Light/Sun Light
   previewOptions:
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}

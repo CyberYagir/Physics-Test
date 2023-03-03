@@ -7,14 +7,12 @@ namespace Builder
 {
     public partial class SelectionService
     {
-
-
-
+        
         public static void SelectObject(GameObject obj, bool multiple)
         {
 
             bool isBuildPart = obj.GetComponent<BuildPart>() != null;
-
+            
             if (isBuildPart)
             {
                 if (Instance.selectedBuildParts.Contains(obj) && multiple)

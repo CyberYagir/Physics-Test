@@ -34,15 +34,16 @@ namespace Builder.Tools
             scalerPos = center / selection.Count;
             scaler.position = scalerPos;
 
+            var isLocal = selection.Count == 1 && SelectionService.GetSpace() == SelectionService.Space.Local;
             
-            MoveParent(selection);
             
-            if (selection.Count == 1 && SelectionService.GetSpace() == SelectionService.Space.Local)
+            if (isLocal)
             {
                 CreateScaler(selection[0].transform, selection);
             }
             else
             {
+                MoveParent(selection);
                 CreateScaler(scaler, selection);
             }
             
@@ -69,7 +70,6 @@ namespace Builder.Tools
             if (axisPlane.Raycast(cameraRay, out float hitT))
             {
                 startHitPoint = cameraRay.GetPoint(hitT);
-                p_hitPoint = startHitPoint;
             }
             else
             {

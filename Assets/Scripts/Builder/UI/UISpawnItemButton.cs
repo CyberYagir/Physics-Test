@@ -21,10 +21,13 @@ namespace Builder.UI
         public void Init(Item item, UICreateWindow window)
         {
             this.item = item;
+
+            if (item == null) return;
             text.text = item.Name;
 
             this.window = window;
 
+            
             if (item.Icon != null)
             {
                 image.texture = item.Icon;
@@ -36,14 +39,18 @@ namespace Builder.UI
                 
                 item.IconSetted.AddListener(delegate
                 {
-                    image.transform.localScale = startImageScale;
-                    image.texture = item.Icon;
+                    if (image != null)
+                    {
+                        image.transform.localScale = startImageScale;
+                        image.texture = item.Icon;
+                    }
                 });
             }
         }
 
         public void Click()
         {
+            if (item == null) return;
             window.CreateItem(item);
         }
 

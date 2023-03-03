@@ -29,6 +29,7 @@ namespace Builder.UI
         public void Click()
         {
             createWindow.MoveFolder(folder);
+            EventSystem.current.SetSelectedGameObject(null);
         }
         
         public override void Enter()

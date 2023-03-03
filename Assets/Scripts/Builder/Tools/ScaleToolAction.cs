@@ -30,7 +30,15 @@ namespace Builder.Tools
             }
             scalerPos = center / selection.Count;
             scaler.position = scalerPos;
-            firstItemScale = selection[0].transform.localScale;
+
+            if (SelectionService.GetSpace() == SelectionService.Space.Local)
+            {
+                firstItemScale = selection[0].transform.localScale;
+            }
+            else
+            {
+                firstItemScale = Vector3.one;
+            }
         }
 
         public void UpdateScalesZeros(List<GameObject> selection)
@@ -77,18 +85,30 @@ namespace Builder.Tools
                 var dir = scaler.InverseTransformDirection(offset);
                 
                 var scale = firstItemScale;
-                
-                scale.Scale(Vector3.one + dir);
-                
-                
-                if (Input.GetKey(KeyCode.LeftControl))
+
+                if (SelectionService.GetSpace() == SelectionService.Space.Global && axis == Vector3.one)
                 {
-                    selection[0].transform.localScale = Vector3Int.RoundToInt(scale);
+                    scale.Scale(Vector3.one + offset);
                 }
                 else
                 {
+                    scale.Scale(Vector3.one + dir);
+                }
+
+                if (Input.GetKey(KeyCode.LeftControl))
+                {
+                    scale = Vector3Int.RoundToInt(scale);
+                }
+
+                if (SelectionService.GetSpace() == SelectionService.Space.Local)
+                {
                     selection[0].transform.localScale = scale;
                 }
+                else
+                {
+                    scaler.transform.localScale = scale;
+                }
+
 
                 if (Input.GetKey(KeyCode.LeftAlt))
                 {
