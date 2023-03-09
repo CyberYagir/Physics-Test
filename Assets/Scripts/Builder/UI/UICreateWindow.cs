@@ -230,30 +230,38 @@ namespace Builder.UI
         IEnumerator RenderObject(Camera cam, BuildPart item, Item folderItem)
         {
             yield return null;
-            var obj = Instantiate(item.gameObject, Vector3.zero, Quaternion.identity);
+            var obj = Instantiate(item.gameObject, Vector3.zero, item.transform.rotation);
             light.enabled = true;
             
             ChangeLayer(obj.transform);
             var bounds = new Bounds(Vector3.zero, Vector3.zero);
             var mesh = obj.GetComponentsInChildren<MeshRenderer>();
-            
+
             if (mesh.Length != 0)
             {
                 cam.targetTexture = new RenderTexture(256, 256, 16, RenderTextureFormat.Default);
-               
+
                 for (int i = 0; i < mesh.Length; i++)
                 {
                     bounds.Encapsulate(mesh[i].bounds);
                 }
 
-                cam.transform.position = bounds.center + bounds.size;
-                obj.transform.position = item.PartPreview.Position;
-                cam.transform.LookAt(bounds.center);
-                obj.transform.rotation = Quaternion.Euler(item.PartPreview.Rotation);
+                light.transform.eulerAngles = item.PartPreview.SunRotation;
+
+                
+                
+                var camParent = cam.transform.parent;
+                cam.transform.parent = obj.transform;
+
+                cam.transform.localPosition = item.PartPreview.Position;
+                cam.transform.localEulerAngles = item.PartPreview.Rotation;
 
                 cam.Render();
 
+                cam.transform.parent = camParent;
+
                 folderItem.SetTexture(cam.targetTexture);
+
             }
             else
             {

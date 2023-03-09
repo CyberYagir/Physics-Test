@@ -94,7 +94,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2124705421725058983, guid: 18faba081eb281a4aabd34428b3bc0de, type: 3}
 --- !u!114 &8570877656847370499
@@ -111,5 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partName: Base/Podium
   previewOptions:
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: -90, y: 0, z: 0}
+    position: {x: -2.335, y: -3.209, z: 4.042}
+    rotation: {x: 324.1628, y: 149.50604, z: 45.766262}
+    sunRotation: {x: 49.99998, y: 321.38037, z: -0.000009297648}

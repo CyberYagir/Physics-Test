@@ -146,8 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partName: Base/Cube
   previewOptions:
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
+    position: {x: 1.822, y: 1.421, z: -1.622}
+    rotation: {x: 30.000004, y: 315, z: 0}
+    sunRotation: {x: 50, y: 330, z: 0}
 --- !u!1 &3776830694422032560
 GameObject:
   m_ObjectHideFlags: 0

@@ -94,7 +94,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8385836491182413749, guid: 18faba081eb281a4aabd34428b3bc0de, type: 3}
 --- !u!114 &5940961443801385060
@@ -111,5 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partName: Base/Stairs
   previewOptions:
-    position: {x: 0, y: -0.5, z: 1}
-    rotation: {x: -90, y: 0, z: 0}
+    position: {x: -2.33, y: -2.714, z: 2.988}
+    rotation: {x: 314.99985, y: 135.00003, z: 55.230717}
+    sunRotation: {x: 50.000004, y: 141.38005, z: 0.0000013282357}

@@ -94,7 +94,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2477511411847689622, guid: 18faba081eb281a4aabd34428b3bc0de, type: 3}
 --- !u!114 &7375349372351186447
@@ -111,5 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partName: Base/Column
   previewOptions:
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: -90, y: 0, z: 0}
+    position: {x: -2.576, y: 2.576, z: 2.029}
+    rotation: {x: 37.76128, y: 129.23148, z: 116.56503}
+    sunRotation: {x: 50, y: 60, z: 0}
