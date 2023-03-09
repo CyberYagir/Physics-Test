@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58c968702912434a8fd420feb7ffb5f, type: 3}
+  m_Name: BaseMaterialsHolder$MaterialsModule
+  m_EditorClassIdentifier: 
+  materials:
+  - materialName: Base/CliffJagged
+    material: {fileID: 2100000, guid: 507ad40e3ba5da044815598198fba39e, type: 2}
+  - materialName: Base/Granite
+    material: {fileID: 2100000, guid: fb716556986e6254fb7cf8b108539053, type: 2}
+  - materialName: BaseGroundDirtRocky
+    material: {fileID: 2100000, guid: ed1c40112b8f8f5418aed3ef7e49b7c4, type: 2}
+  - materialName: Base/GroundForest
+    material: {fileID: 2100000, guid: c107a6c9028352941a0e98f5a8cc2d51, type: 2}
+  - materialName: Base/LayeredRock
+    material: {fileID: 2100000, guid: 455ee656721b892408fd70418f6129bd, type: 2}
+  - materialName: Base/PineTree
+    material: {fileID: 2100000, guid: a6601e4795050af42ae7acbeacf0da62, type: 2}
+  - materialName: Base/SmoothGranite
+    material: {fileID: 2100000, guid: 6da236378063deb40827d1c74cb5d856, type: 2}
+  - materialName: Base/Glass Dark
+    material: {fileID: 2100000, guid: 51396a457ace7ca459c474a7d7ed6ceb, type: 2}
+  - materialName: Base/Glass Dirt
+    material: {fileID: 2100000, guid: cb70645871dc2f74981c86ec014a1cdf, type: 2}
